@@ -24,6 +24,27 @@
             "delay": 0
         },
         {
+            "key": "field_64f4641228455",
+            "label": "Subtitle",
+            "name": "sub_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "translations": "translate",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_64eb63ade61f8",
             "label": "Your current professional status",
             "name": "pro_status",
@@ -127,5 +148,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693149329
+    "modified": 1693738051
 }

@@ -8,8 +8,12 @@
 
 global $global_options;
 $footer_scripts = get_field_value( $global_options, 'footer_scripts' );
+
+
+include(locate_template('src/template-parts/template-custom-right-sidebar.php', false, false));
 ?>
 
+</div><!-- .container -->
 </div><!-- end of <main> -->
 
 <?php do_action( 'wp_rock_before_site_footer' ); ?>

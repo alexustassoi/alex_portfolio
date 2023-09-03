@@ -44,4 +44,8 @@ if ( function_exists( 'get_field' ) ) {
     <?php do_action( 'wp_rock_after_site_header' ); ?>
 
     <div id="main-wrapper">
+        <div class="container">
+            <?php
+            include(locate_template('src/template-parts/template-custom-left-sidebar.php', false, false));
 
+            ?>
