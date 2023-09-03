@@ -1,0 +1,70 @@
+%heading {
+
+}
+
+%paragraph {
+
+}
+
+
+h1 {
+    @extend %heading;
+    font-size: 50px;
+    line-height: 100.02%;
+
+    @include min-break('1024px') {
+        font-size: 95px;
+    }
+}
+
+h2 {
+    @extend %heading;
+    font-size: 40px;
+
+    @include min-break('1024px') {
+        font-size: 74px;
+    }
+}
+
+h3 {
+    @extend %heading;
+    font-size: 30px;
+
+    @include min-break('1024px') {
+        font-size: 70px;
+    }
+}
+
+h4 {
+    @extend %heading;
+    font-size: 25px;
+
+    @include min-break('1024px') {
+        font-size: 50px;
+        line-height: 104.02%;
+    }
+}
+
+h5 {
+    @extend %heading;
+    font-size: 25px;
+    font-weight: 800;
+
+    @include min-break('1024px') {
+        font-size: 45px;
+    }
+}
+
+h6 {
+    @extend %heading;
+    font-size: 20px;
+
+    @include min-break('1024px') {
+        font-size: 40px;
+    }
+}
+
+p {
+    @extend %paragraph;
+}
+

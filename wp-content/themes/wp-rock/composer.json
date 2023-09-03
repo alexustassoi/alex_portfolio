@@ -1,0 +1,16 @@
+{
+  "name": "alex_saiko/wordpress-webpack-workflow",
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.7",
+    "wp-coding-standards/wpcs": "^2.3"
+  },
+  "require": {
+    "php": ">7.2"
+  },
+  "authors": [
+    {
+      "name": "alex saiko",
+      "email": "alexustassoi@gmail.com"
+    }
+  ]
+}
