@@ -1,57 +1,84 @@
 %heading {
-
+    color: var(--wp--color--normal-text);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 %paragraph {
-
+    color: var(--wp--color--normal-text);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.33;
 }
 
 
 h1 {
     @extend %heading;
-    font-size: 50px;
-    line-height: 100.02%;
+    position: relative;
+    z-index: 1;
+    font-size: 102px;
+    line-height: 1;
 
-    @include min-break('1024px') {
-        font-size: 95px;
+    &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        left: -55px;
+        top: -16px;
+        width: 220px;
+        height: 155px;
+        z-index: -1;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjE2IiBoZWlnaHQ9IjEzNiIgdmlld0JveD0iMCAwIDIxNiAxMzYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIxNS42MzcgLTIuMDg3MjVlLTA3TDAgMTI0LjQ5OEMxMDAuNjU0IDE2MC4wMjggMTk2LjI5MSAxMDQuODEyIDIxNS42MzcgLTIuMDg3MjVlLTA3WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzFfNDkxKSIvPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8xXzQ5MSIgeDE9IjIyNC44NTYiIHkxPSI0NC4wOTkxIiB4Mj0iMzcuMjI2NSIgeTI9IjE1MC4wNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9IiNGRkIxNDciLz48c3RvcCBvZmZzZXQ9IjAuNTIwMjY0IiBzdG9wLWNvbG9yPSIjRkY2QzYzIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQjg2QURGIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PC9zdmc+) center center no-repeat;
+        background-size: contain;
+    }
+
+    @include max-break('1024px') {
+    }
+
+    strong {
+        font-weight: 700;
     }
 }
 
 h2 {
     @extend %heading;
-    font-size: 40px;
+    font-size: 48px;
+    margin-bottom: 48px;
+    font-weight: 700;
 
     @include min-break('1024px') {
-        font-size: 74px;
+        //font-size: 74px;
     }
 }
 
 h3 {
     @extend %heading;
-    font-size: 30px;
+    font-size: 40px;
 
     @include min-break('1024px') {
-        font-size: 70px;
+        //font-size: 70px;
     }
 }
 
 h4 {
     @extend %heading;
-    font-size: 25px;
+    font-size: 32px;
 
     @include min-break('1024px') {
-        font-size: 50px;
-        line-height: 104.02%;
+        //font-size: 50px;
+        //line-height: 104.02%;
     }
 }
 
 h5 {
     @extend %heading;
-    font-size: 25px;
-    font-weight: 800;
+    font-size: 24px;
 
     @include min-break('1024px') {
-        font-size: 45px;
+        //font-size: 45px;
     }
 }
 
@@ -60,11 +87,15 @@ h6 {
     font-size: 20px;
 
     @include min-break('1024px') {
-        font-size: 40px;
+        //font-size: 40px;
     }
 }
 
 p {
     @extend %paragraph;
+}
+
+strong {
+    font-weight: 700;
 }
 
