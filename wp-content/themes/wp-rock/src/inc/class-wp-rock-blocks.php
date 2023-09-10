@@ -29,6 +29,18 @@ class WP_Rock_Blocks {
             'template' => 'src/template-parts/block-hero.php',
             'post_types' => array( 'post', 'page' ),
         ),
+        'about-me' => array(
+            'title' => 'About me Block',
+            'description' => '',
+            'template' => 'src/template-parts/block-about-me.php',
+            'post_types' => array( 'post', 'page' ),
+        ),
+        'experience' => array(
+            'title' => 'Experience Block',
+            'description' => '',
+            'template' => 'src/template-parts/block-experience.php',
+            'post_types' => array( 'post', 'page' ),
+        ),
     );
     /**
      * List of Allowed blocks

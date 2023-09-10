@@ -9,7 +9,11 @@
 global $global_options;
 $footer_scripts = get_field_value( $global_options, 'footer_scripts' );
 
+?>
 
+</div> <!-- End main content -->
+
+<?php
 include(locate_template('src/template-parts/template-custom-right-sidebar.php', false, false));
 ?>
 

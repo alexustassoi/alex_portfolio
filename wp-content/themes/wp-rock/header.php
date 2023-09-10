@@ -49,3 +49,5 @@ if ( function_exists( 'get_field' ) ) {
             include(locate_template('src/template-parts/template-custom-left-sidebar.php', false, false));
 
             ?>
+            <!--  Start main content  -->
+            <div class="content-wrapper">

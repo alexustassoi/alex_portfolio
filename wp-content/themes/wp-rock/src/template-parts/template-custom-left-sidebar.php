@@ -12,7 +12,7 @@ $copyright       = get_field_value($global_options, 'copyright');
 $social_repeater = get_field_value($global_options, 'social_repeater');
 ?>
 
-<div id="custom-sidebar" class="custom-sidebar">
+<div id="custom-left-sidebar" class="custom-sidebar custom-sidebar__left">
     <?php
     echo ($logo)
         ? '<a class="custom-sidebar__logo" href="' . get_home_url() . '"><img src="' . do_shortcode($logo) . '" alt="Logo"></a>'

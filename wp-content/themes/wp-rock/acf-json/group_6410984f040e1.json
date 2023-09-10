@@ -28,6 +28,27 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_64fd7cf6e5e92",
+            "label": "Your full name",
+            "name": "full_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Enter your full name. For example: 'Jacob Jones'",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "translations": "translate",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_641b051915b2c",
             "label": "E-Mail",
             "name": "email",
@@ -52,6 +73,48 @@
             "key": "field_64f4662d49e10",
             "label": "Phone",
             "name": "phone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "translations": "translate",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64fd7ba360372",
+            "label": "Your age",
+            "name": "age",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "translations": "translate",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64fd7bb460373",
+            "label": "Your location",
+            "name": "location",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -196,5 +259,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693746515
+    "modified": 1694334284
 }

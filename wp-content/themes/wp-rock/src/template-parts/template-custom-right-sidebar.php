@@ -11,7 +11,7 @@ $social_repeater = get_field_value($global_options, 'social_repeater');
 ?>
 
 
-<div id="custom-right-sidebar" class="custom-right-sidebar">
+<div id="custom-right-sidebar" class="custom-sidebar custom-sidebar__right">
     <?php
     if ($social_repeater) { ?>
         <div class="custom-sidebar__social-wrap">

@@ -1,7 +1,5 @@
 .custom-sidebar {
     height: 100vh;
-    border-right: 1px solid rgba(20, 19, 19, 0.10);
-    background: #141313;
     min-width: 285px;
     max-width: 285px;
     flex-shrink: 0;
@@ -11,12 +9,56 @@
     left: 0;
     overflow-y: auto;
 
+    &__left {
+        border-right: 1px solid rgba(20, 19, 19, 0.10);
+        background: var(--wp--color--sidebar-bg);
+
+        .custom-sidebar__social-item {
+            background-color: var(--wp--color--sidebar-social-bg);
+            opacity: 1;
+            border: none;
+        }
+    }
+
+    &__right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .custom-sidebar {
+            &__social-item {
+                &:hover {
+                    border-color: var(--wp--gradient--orange-to-lilac);
+                }
+            }
+
+            &__social-wrap {
+                width: max-content;
+                margin-bottom: 0;
+                padding-bottom: 156px;
+                position: relative;
+                z-index: 1;
+
+                &:after {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    width: 2px;
+                    height: 131px;
+                    z-index: 1;
+                    background-color: rgba(20, 19, 19, .3);
+                }
+            }
+        }
+    }
+
     &__social-wrap {
         display: flex;
         flex-direction: column;
     }
-
-
 
     &__logo {
         display: flex;
@@ -28,7 +70,7 @@
 
         .menu-item {
             width: max-content;
-            color: #FFF;
+            color: var(--wp--color--sidebar-menu-item);
             font-size: 20px;
             font-style: normal;
             font-weight: 400;
@@ -49,7 +91,7 @@
                 height: 4px;
                 z-index: -1;
                 opacity: 0;
-                background-image: var(--wp--preset--gradient--orange-to-lilac);
+                background-image: var(--wp--gradient--orange-to-lilac);
                 transition: opacity .5s ease-out;
             }
 
@@ -90,8 +132,8 @@
         height: 40px;
         margin-bottom: 12px;
         border-radius: 50%;
-        background: #FFF;
         overflow: hidden;
+        border: 1px solid var(--wp--color--sidebar-social-border);
 
         &:last-of-type {
             margin-bottom: 0;
@@ -105,7 +147,7 @@
     }
 
     &__copyright {
-        color: #FFF;
+        color: var(--wp--color--sidebar-menu-item);
         font-size: 16px;
         font-style: normal;
         font-weight: 400;

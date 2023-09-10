@@ -50,11 +50,11 @@ $owner_photo = get_field_value($fields, 'owner_photo');
                 <?php
                 if ($phone) {
                     $tel_attr = preg_replace('/([\-\s()\/])+/', '' , $phone);
-                    echo'<a class="hero__phone hero__contact-item" href="tel:' . do_shortcode($tel_attr) . '"><span class="hero__contact-icon"></span>'. esc_html($phone) .'</a>';
+                    echo'<a class="contact__phone hero__contact-item contact-item" href="tel:' . do_shortcode($tel_attr) . '"><span class="hero__contact-icon contact-icon"></span>'. esc_html($phone) .'</a>';
                 }
 
                 if ($email) {
-                    echo'<a class="hero__email hero__contact-item" href="mailto:' . do_shortcode($email) . '"><span class="hero__contact-icon"></span>'. esc_html($email) .'</a>';
+                    echo'<a class="contact__email hero__contact-item contact-item" href="mailto:' . do_shortcode($email) . '"><span class="hero__contact-icon contact-icon"></span>'. esc_html($email) .'</a>';
                 }
 
                 ?>
