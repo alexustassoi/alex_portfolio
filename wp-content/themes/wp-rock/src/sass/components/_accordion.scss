@@ -50,17 +50,38 @@
         transition: all var(--wp--transition);
         text-transform: uppercase;
 
+        @include max-break(1750px) {
+            min-width: 540px;
+            padding-right: 65px;
+        }
+
+        @include max-break(1470px) {
+            min-width: 470px;
+        }
+
+        @include max-break(1370px) {
+            min-width: 450px;
+        }
+
+        @include max-break(1030px) {
+            min-width: 480px;
+        }
+
         &:after {
             position: absolute;
             content: '';
             display: block;
             left: 19px;
-            top: 12px;
+            top: 11px;
             width: 10px;
             height: 9px;
             border-radius: 4px;
             background-color: var(--wp--color--normal-text);
             z-index: 1;
+
+            @include max-break(1470px) {
+                top: 7px;
+            }
         }
     }
 

@@ -2,6 +2,22 @@
     padding-top: 100px;
     padding-bottom: 80px;
 
+    @include max-break(1600px) {
+        padding-top: 90px;
+    }
+
+    @include max-break(1470px) {
+        padding-top: 70px;
+    }
+
+    @include max-break(1199px) {
+        padding-top: 60px;
+    }
+
+    //@include max-break(1030px) {
+    //    zoom: 0.85;
+    //}
+
     &__content-wrap {
 
     }
@@ -64,6 +80,10 @@
         object-fit: contain;
         width: 100%;
         height: auto;
+
+        @include max-break(1470px) {
+            right: 0px;
+        }
     }
 
     &__full-name {
@@ -75,6 +95,10 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-bottom: 12px;
+
+        @include max-break(1470px) {
+            font-size: 34px;
+        }
     }
 
     &__sub-title,
@@ -95,6 +119,10 @@
         h5 {
             letter-spacing: -0.72px;
             text-align: center;
+
+            @include max-break(1370px) {
+                font-size: 22px;
+            }
 
             strong {
                 font-style: italic;

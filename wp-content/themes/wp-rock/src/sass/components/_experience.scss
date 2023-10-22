@@ -5,6 +5,33 @@
     padding-right: 115px;
     margin-top: 60px;
 
+    @include max-break(1750px) {
+        padding-right: 90px;
+    }
+
+    @include max-break(1650px) {
+        padding-top: 100px;
+        padding-bottom: 110px;
+    }
+
+    @include max-break(1470px) {
+        margin-top: 30px;
+        padding-right: 70px;
+    }
+
+    @include max-break(1280px) {
+        padding-right: 60px;
+    }
+
+    @include max-break(991px) {
+        padding-bottom: 80px;
+        padding-top: 80px;
+    }
+
+    @include max-break(850px) {
+        padding-right: 0;
+    }
+
     &__content-wrap {
         display: flex;
         justify-content: space-between;
@@ -13,6 +40,11 @@
     &__left-col {
         max-width: 396px;
         margin-right: 70px;
+        min-width: 400px;
+
+        @include max-break(1370px) {
+            min-width: 350px;
+        }
     }
 
     &__pre-title,

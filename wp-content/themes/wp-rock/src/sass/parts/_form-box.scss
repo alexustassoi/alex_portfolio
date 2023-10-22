@@ -58,12 +58,12 @@
         font-weight: 500;
         line-height: 1.5;
 
-        @include max-break('1750px') {
+        @include max-break(1750px) {
             padding-left: 35px;
             padding-right: 35px;
         }
 
-        @include max-break('1750px') {
+        @include max-break(1750px) {
             padding-left: 35px;
             padding-right: 35px;
         }

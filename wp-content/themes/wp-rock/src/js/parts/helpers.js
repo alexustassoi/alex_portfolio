@@ -347,13 +347,19 @@ export function anchorLinkScroll(elementsSelector = null, callback = null) {
                         : event.target.dataset.href;
 
                 const ANCHOR_ELEMENT = document.querySelector(elHref);
+                const CONTENT_WRAPPER =
+                    document.querySelector('.content-wrapper');
 
-                ANCHOR_ELEMENT &&
-                    window.scroll({
-                        behavior: 'smooth',
-                        left: 0,
-                        top: ANCHOR_ELEMENT.offsetTop,
-                    });
+                if (!ANCHOR_ELEMENT || !CONTENT_WRAPPER) return;
+                const currentZoom = window
+                    .getComputedStyle(CONTENT_WRAPPER)
+                    .getPropertyValue('zoom');
+
+                window.scroll({
+                    behavior: 'smooth',
+                    left: 0,
+                    top: ANCHOR_ELEMENT.offsetTop * currentZoom,
+                });
 
                 if (callback) callback(event.target);
             });

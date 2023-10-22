@@ -12,8 +12,14 @@
 
     &__figure {
         max-height: 260px;
+        min-height: 260px;
         height: 100%;
         overflow: hidden;
+
+        @include max-break(1470px) {
+            max-height: 300px;
+            min-height: 300px;
+        }
 
         img {
             width: 100%;
@@ -34,6 +40,10 @@
         font-weight: 700;
         line-height: 1;
         margin-bottom: 17px;
+
+        @include max-break(1670px) {
+            font-size: 24px;
+        }
     }
 
     &__excerpt {
@@ -51,14 +61,30 @@
         gap: 45px;
         padding-top: 35px;
         margin-bottom: 50px;
+
+        @include max-break(1670px) {
+            gap: 25px;
+        }
+
+        @include max-break(1470px) {
+            padding-top: 10px;
+            gap: 45px;
+        }
     }
 
     &__item {
         width: calc((100% - 90px) / 3);
         border-radius: 20px;
-        margin-bottom: 18px;
         display: flex;
         flex-direction: column;
+
+        @include max-break(1670px) {
+            width: calc((100% - 50px) / 3);
+        }
+
+        @include max-break(1470px) {
+            width: calc((100% - 45px) / 2);
+        }
     }
 
     &__item-content {

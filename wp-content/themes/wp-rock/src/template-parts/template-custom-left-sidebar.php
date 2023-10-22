@@ -12,7 +12,15 @@ $copyright       = get_field_value($global_options, 'copyright');
 $social_repeater = get_field_value($global_options, 'social_repeater');
 ?>
 
-<div id="custom-left-sidebar" class="custom-sidebar custom-sidebar__left">
+<div id="custom-left-sidebar" class="custom-sidebar custom-sidebar__left js-custom-sidebar-left">
+    <div class="custom-sidebar__burger-menu-wrap" data-role="toggle-burger-menu">
+        <div class="custom-sidebar__burger-menu js-burger-menu">
+            <span class="burger__line burger__line-first"></span>
+            <span class="burger__line burger__line-second"></span>
+            <span class="burger__line burger__line-third"></span>
+            <span class="burger__line burger__line-fourth"></span>
+        </div>
+    </div>
     <?php
     echo ($logo)
         ? '<a class="custom-sidebar__logo" href="' . get_home_url() . '"><img src="' . do_shortcode($logo) . '" alt="Logo"></a>'

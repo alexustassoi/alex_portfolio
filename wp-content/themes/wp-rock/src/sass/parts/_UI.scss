@@ -22,6 +22,22 @@ h1 {
     line-height: 1;
     text-transform: uppercase;
 
+    @include max-break(1750px) {
+        font-size: 75px;
+    }
+
+    @include max-break(1650px) {
+        font-size: 65px;
+    }
+
+    @include max-break(1470px) {
+        font-size: 55px;
+    }
+
+    @include max-break(1199px) {
+        font-size: 50px;
+    }
+
     &:after {
         position: absolute;
         content: '';
@@ -33,6 +49,27 @@ h1 {
         z-index: -1;
         background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjE2IiBoZWlnaHQ9IjEzNiIgdmlld0JveD0iMCAwIDIxNiAxMzYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIxNS42MzcgLTIuMDg3MjVlLTA3TDAgMTI0LjQ5OEMxMDAuNjU0IDE2MC4wMjggMTk2LjI5MSAxMDQuODEyIDIxNS42MzcgLTIuMDg3MjVlLTA3WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyXzFfNDkxKSIvPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8xXzQ5MSIgeDE9IjIyNC44NTYiIHkxPSI0NC4wOTkxIiB4Mj0iMzcuMjI2NSIgeTI9IjE1MC4wNCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9IiNGRkIxNDciLz48c3RvcCBvZmZzZXQ9IjAuNTIwMjY0IiBzdG9wLWNvbG9yPSIjRkY2QzYzIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQjg2QURGIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PC9zdmc+) center center no-repeat;
         background-size: contain;
+
+        @include max-break(1650px) {
+            width: 191px;
+            height: 130px;
+            left: -70px;
+            top: -20px;
+        }
+
+        @include max-break(1470px) {
+            height: 100px;
+            left: -54px;
+            top: -10px;
+            width: 150px;
+        }
+
+        @include max-break(1280px) {
+            width: 120px;
+            height: 85px;
+            left: -35px;
+            top: -13px;
+        }
     }
 
     @include max-break('1024px') {
@@ -49,8 +86,8 @@ h2 {
     margin-bottom: 48px;
     font-weight: 700;
 
-    @include min-break('1024px') {
-        //font-size: 74px;
+    @include max-break(1470px) {
+        font-size: 40px;
     }
 }
 
@@ -67,9 +104,12 @@ h4 {
     @extend %heading;
     font-size: 32px;
 
-    @include min-break('1024px') {
-        //font-size: 50px;
-        //line-height: 104.02%;
+    @include max-break(1470px) {
+        font-size: 24px;
+    }
+
+    @include max-break(1199px) {
+        font-size: 28px;
     }
 }
 

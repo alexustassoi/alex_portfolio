@@ -9,9 +9,149 @@
     left: 0;
     overflow-y: auto;
 
+    @include max-break(1750px) {
+        max-width: 265px;
+        min-width: 265px;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    @include max-break(1600px) {
+        max-width: 250px;
+        min-width: 250px;
+        padding-left: 30px;
+        padding-right: 20px;
+    }
+
+    @include max-break(1470px) {
+        padding-left: 25px;
+        padding-top: 35px;
+    }
+
+    @include max-break(1280px) {
+        max-width: 210px;
+        min-width: 210px;
+    }
+
+    @include max-break(1030px) {
+        padding-left: 16px;
+        padding-top: 25px;
+        max-width: 170px;
+        min-width: 170px;
+    }
+
+    @include max-break(768px) {
+        padding-right: 16px;
+        max-width: 230px;
+        min-width: 230px;
+    }
+
+    &__left-mobile {
+        display: none;
+
+        @include max-break(768px) {
+            display: flex;
+        }
+
+        .custom-sidebar__left  {
+            display: block;
+        }
+    }
+
+    &__burger-menu-wrap {
+        display: none;
+        padding: 10px;
+        position: absolute;
+        right: -51px;
+        top: 14px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background: var(--wp--color--sidebar-bg);
+        transition: right var(--wp--transition);
+
+        @include max-break(768px) {
+            display: block;
+        }
+    }
+    
+    &__burger-menu {
+        height: 24px;
+        width: 30px;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+        pointer-events: none;
+
+        .burger__line {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--wp--color--white);
+            position: absolute;
+            z-index: 11;
+            left: 0;
+            transition: all var(--wp--transition);
+            pointer-events: none;
+        }
+
+        .burger__line-first {
+            top: 0;
+        }
+
+        .burger__line-second,
+        .burger__line-third {
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        .burger__line-fourth {
+            bottom: 0;
+        }
+
+        &.burger-active .burger__line-first,
+        &.burger-active .burger__line-fourth {
+            opacity: 0;
+        }
+
+        &.burger-active .burger__line-second,
+        &.burger-active .burger__line-third {
+            width: calc(100% - 10px);
+            left: 10px;
+        }
+
+        &.burger-active .burger__line-second {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &.burger-active .burger__line-third {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+
     &__left {
         border-right: 1px solid rgba(20, 19, 19, 0.10);
         background: var(--wp--color--sidebar-bg);
+
+        @include max-break(768px) {
+            transform: translateX(-100%);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            overflow: unset;
+            transition: transform var(--wp--transition);
+            display: none;
+        }
+
+        &.burger-active {
+            @include max-break(768px) {
+                transform: translateX(0);
+            }
+
+            .custom-sidebar__burger-menu-wrap {
+                right: 0;
+            }
+        }
 
         .custom-sidebar__social-item {
             background-color: var(--wp--color--sidebar-social-bg);
@@ -51,6 +191,35 @@
         justify-content: flex-end;
         align-items: center;
 
+        @include max-break(1750px) {
+            min-width: 200px;
+            max-width: 200px;
+        }
+
+        @include max-break(1600px) {
+            min-width: 170px;
+            max-width: 170px;
+        }
+
+        @include max-break(1470px) {
+            max-width: 160px;
+            min-width: 160px;
+        }
+
+        @include max-break(1280px) {
+            max-width: 130px;
+            min-width: 130px;
+        }
+
+        @include max-break(1030px) {
+            max-width: 100px;
+            min-width: 100px;
+        }
+
+        @include max-break(850px) {
+            display: none;
+        }
+
         .custom-sidebar {
             &__social-item {
                 &:hover {
@@ -65,6 +234,26 @@
                 position: relative;
                 z-index: 1;
 
+                @include max-break(1600px) {
+                    right: 16px;
+                }
+
+                @include max-break(1280px) {
+                    right: 12px;
+                }
+
+                @include max-break(1199px) {
+                    right: 10px;
+                }
+
+                @include max-break(1030px) {
+                    right: 0;
+                }
+
+                @include max-break(991px) {
+                    right: -1px;
+                }
+
                 &:after {
                     position: absolute;
                     content: '';
@@ -76,6 +265,10 @@
                     height: 131px;
                     z-index: 1;
                     background-color: rgba(20, 19, 19, .3);
+
+                    @include max-break(1280px) {
+                        width: 1px;
+                    }
                 }
             }
         }
@@ -89,10 +282,30 @@
     &__logo {
         display: flex;
         margin-bottom: 100px;
+
+        @include max-break(1600px) {
+            margin-bottom: 80px;
+        }
+
+        @include max-break(1470px) {
+            margin-bottom: 60px;
+        }
+
+        @include max-break(1030px) {
+            margin-bottom: 50px;
+        }
     }
 
     &__menu {
         margin-bottom: 218px;
+
+        @include max-break(1600px) {
+            margin-bottom: 100px;
+        }
+
+        @include max-break(1030px) {
+            margin-bottom: 65px;
+        }
 
         .menu-item {
             width: max-content;
@@ -106,6 +319,28 @@
             position: relative;
             z-index: 1;
 
+            @include max-break(1600px) {
+                font-size: 18px;
+            }
+
+            @include max-break(1470px) {
+                font-size: 16px;
+            }
+
+            @include max-break(1199px) {
+                font-size: 14px;
+                line-height: 1.3;
+            }
+
+            @include max-break(1030px) {
+                font-size: 13px;
+                margin-bottom: 5px;
+            }
+
+            @include max-break(991px) {
+                font-size: 12px;
+            }
+
             &:after {
                 position: absolute;
                 content: '';
@@ -118,6 +353,10 @@
                 opacity: 0;
                 background-image: var(--wp--gradient--orange-to-lilac);
                 transition: opacity .5s ease-out;
+
+                @include max-break(1030px) {
+                    height: 3px;
+                }
             }
 
             &:hover {
@@ -166,6 +405,11 @@
         overflow: hidden;
         border: 1px solid var(--wp--color--sidebar-social-border);
 
+        @include max-break(1030px) {
+            width: 36px;
+            height: 36px;
+        }
+
         &:last-of-type {
             margin-bottom: 0;
         }
@@ -182,5 +426,17 @@
         font-style: normal;
         font-weight: 400;
         line-height: 1.37;
+
+        @include max-break(1280px) {
+            font-size: 14px;
+        }
+
+        @include max-break(1030px) {
+            font-size: 12px;
+        }
+
+        @include max-break(768px) {
+            font-size: 10px;
+        }
     }
 }

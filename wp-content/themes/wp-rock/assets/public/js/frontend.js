@@ -874,13 +874,19 @@ function anchorLinkScroll(elementsSelector = null, callback = null) {
                         : event.target.dataset.href;
 
                 const ANCHOR_ELEMENT = document.querySelector(elHref);
+                const CONTENT_WRAPPER =
+                    document.querySelector('.content-wrapper');
 
-                ANCHOR_ELEMENT &&
-                    window.scroll({
-                        behavior: 'smooth',
-                        left: 0,
-                        top: ANCHOR_ELEMENT.offsetTop,
-                    });
+                if (!ANCHOR_ELEMENT || !CONTENT_WRAPPER) return;
+                const currentZoom = window
+                    .getComputedStyle(CONTENT_WRAPPER)
+                    .getPropertyValue('zoom');
+
+                window.scroll({
+                    behavior: 'smooth',
+                    left: 0,
+                    top: ANCHOR_ELEMENT.offsetTop * currentZoom,
+                });
 
                 if (callback) callback(event.target);
             });
@@ -1185,6 +1191,16 @@ function ready() {
               target.classList.add('not-active');
             }
           });
+          break;
+        }
+      case 'toggle-burger-menu':
+        {
+          var burgerMenu = window.document.querySelector('.js-burger-menu');
+          var customSidebarLeft = window.document.querySelector('.js-custom-sidebar-left');
+          if (!burgerMenu || !customSidebarLeft) return;
+          burgerMenu.classList.toggle('burger-active');
+          customSidebarLeft.classList.toggle('burger-active');
+          window.document.body.classList.toggle('burger-active');
           break;
         }
       default:

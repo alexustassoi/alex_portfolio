@@ -10,15 +10,15 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>"/>
+    <meta charset="<?php bloginfo('charset'); ?>"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1"/>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/>
-    <?php if ( is_404() ) { ?>
+    <?php if (is_404()) { ?>
         <meta name="robots" content="noindex, nofollow"/>
     <?php } ?>
     <?php wp_head(); ?>
-    <?php do_action( 'wp_rock_before_close_head_tag' ); ?>
+    <?php do_action('wp_rock_before_close_head_tag'); ?>
 </head>
 
 <?php
@@ -26,24 +26,30 @@ global $global_options;
 $page_class = '';
 $page_id    = get_queried_object_id();
 
-if ( function_exists( 'get_field' ) ) {
-    $page_class = ( get_field( 'body_class', $page_id ) ) ?: '';
+if (function_exists('get_field')) {
+    $page_class = (get_field('body_class', $page_id)) ?: '';
 }
 ?>
 
-<body <?php body_class( $page_class ); ?>>
+<body <?php body_class($page_class); ?>>
 
-<?php do_action( 'wp_rock_after_open_body_tag' ); ?>
+<?php do_action('wp_rock_after_open_body_tag'); ?>
 
 <div class="scroll-to-top-button js-scrollToTopBtn" data-role="scroll-to-top"></div>
 
+<div class="custom-sidebar__left-mobile">
+    <?php
+    include(locate_template('src/template-parts/template-custom-left-sidebar.php', false, false));
+    ?>
+</div>
+
 <div id="wrapper" class="wrapper">
 
-    <?php do_action( 'wp_rock_before_site_header' ); ?>
+    <?php do_action('wp_rock_before_site_header'); ?>
 
-    <?php echo esc_html( get_template_part( 'src/template-parts/custom', 'header' ) ); ?>
+    <?php echo esc_html(get_template_part('src/template-parts/custom', 'header')); ?>
 
-    <?php do_action( 'wp_rock_after_site_header' ); ?>
+    <?php do_action('wp_rock_after_site_header'); ?>
 
     <div id="main-wrapper">
         <div class="container">

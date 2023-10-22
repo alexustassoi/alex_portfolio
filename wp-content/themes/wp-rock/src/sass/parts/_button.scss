@@ -14,6 +14,14 @@
     outline: none;
     width: max-content;
     cursor: pointer;
+
+    @include max-break(1470px) {
+        font-size: 16px;
+    }
+
+    @include max-break(991px) {
+        font-size: 14px;
+    }
 }
 
 .button {
@@ -83,6 +91,26 @@
     overflow: hidden;
     transition: all var(--wp--transition);
 
+    @include max-break(1750px) {
+        right: 24px;
+    }
+
+    @include max-break(1470px) {
+        bottom: 60px;
+    }
+
+    @include max-break(1280px) {
+        width: 50px;
+        height: 50px;
+    }
+
+    @include max-break(1030px) {
+        bottom: 50px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+    }
+
     @include max-break('480px') {
         right: 16px;
         bottom: 90px;
@@ -91,11 +119,19 @@
     &.active {
         pointer-events: auto;
         opacity: 1;
+
+        @include max-break(850px) {
+            opacity: .5;
+        }
     }
 
     &:hover {
         &:after {
             animation: shake 0.5s ease;
+        }
+
+        @include max-break(850px) {
+            opacity: 1;
         }
     }
 
@@ -111,5 +147,10 @@
         z-index: 1;
         background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTguMDY5OSA5LjU3TDExLjk5OTkgMy41TDUuOTI5OTMgOS41NyIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMTIgMjAuNDk5OVYzLjY2OTkyIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==) center center no-repeat;
         background-size: contain;
+
+        @include max-break(1280px) {
+            width: 20px;
+            height: 20px;
+        }
     }
 }
