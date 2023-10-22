@@ -1,0 +1,115 @@
+%button-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--wp--font-family--title);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.33;
+    position: relative;
+    z-index: 1;
+    appearance: none;
+    border: none;
+    outline: none;
+    width: max-content;
+    cursor: pointer;
+}
+
+.button {
+    @extend %button-style;
+    color: var(--wp--color--white);
+    padding: 16px 72px 16px 40px;
+    background: var(--wp--color--normal-text);
+    text-decoration: underline rgba(255, 255, 255, 0);
+
+    &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        z-index: 1;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl8xXzUwMCkiLz48cGF0aCBkPSJNOS4wMDAyIDQuODAwMTFWNi43MjAxMUgxNS4zMjY2TDQuMjAwMiAxNy44NDY1TDUuNTUzOCAxOS4yMDAxTDE2LjY4MDIgOC4wNzM3MVYxNC40MDAxSDE4LjYwMDJWNC44MDAxMUg5LjAwMDJaIiBmaWxsPSJ3aGl0ZSIvPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhcl8xXzUwMCIgeDE9IjIyLjYzOCIgeTE9IjE2Ljg4ODYiIHgyPSIxLjg2ODQ4IiB5Mj0iMTYuODMyMyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9IiNGRkIxNDciLz48c3RvcCBvZmZzZXQ9IjAuNTIwMjY0IiBzdG9wLWNvbG9yPSIjRkY2QzYzIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQjg2QURGIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PC9zdmc+) center center no-repeat;
+        background-size: contain;
+        pointer-events: none;
+    }
+
+    &:hover {
+        opacity: .9;
+        text-decoration: underline rgba(255, 255, 255, 1);
+    }
+}
+
+.download-btn {
+    @extend %button-style;
+    text-decoration: underline;
+    padding-right: 32px;
+
+    &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        z-index: 1;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiMxNDEzMTMiLz48cGF0aCBkPSJNOC45OTk5NSA0LjhWNi43MkgxNS4zMjY0TDQuMTk5OTUgMTcuODQ2NEw1LjU1MzU1IDE5LjJMMTYuNjggOC4wNzM2VjE0LjRIMTguNlY0LjhIOC45OTk5NVoiIGZpbGw9IndoaXRlIi8+PC9zdmc+) center center no-repeat;
+        background-size: contain;
+    }
+
+    &:hover {
+        text-decoration: unset;
+    }
+}
+
+.scroll-to-top-button {
+    pointer-events: none;
+    opacity: 0;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    z-index: 100;
+    right: 37px;
+    bottom: 110px;
+    background: var(--wp--gradient--orange-to-lilac);
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all var(--wp--transition);
+
+    @include max-break('480px') {
+        right: 16px;
+        bottom: 90px;
+    }
+
+    &.active {
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    &:hover {
+        &:after {
+            animation: shake 0.5s ease;
+        }
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 26px;
+        height: 26px;
+        z-index: 1;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTguMDY5OSA5LjU3TDExLjk5OTkgMy41TDUuOTI5OTMgOS41NyIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMTIgMjAuNDk5OVYzLjY2OTkyIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==) center center no-repeat;
+        background-size: contain;
+    }
+}

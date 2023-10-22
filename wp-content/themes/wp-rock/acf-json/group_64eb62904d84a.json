@@ -24,12 +24,12 @@
             "delay": 0
         },
         {
-            "key": "field_64f4641228455",
-            "label": "Subtitle",
-            "name": "sub_title",
+            "key": "field_651acaa5aa6eb",
+            "label": "Job status and your current location",
+            "name": "job_status_and_location",
             "aria-label": "",
-            "type": "text",
-            "instructions": "This field is for a piece of text that looks something like this on your website: ‘Product Designer based in London’ and this field is responsible for part of the substring ‘based in’",
+            "type": "wysiwyg",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -39,52 +39,10 @@
             },
             "default_value": "",
             "translations": "translate",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_64eb63ade61f8",
-            "label": "Your current professional status",
-            "name": "pro_status",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "This field is for a piece of text that looks something like this on your website: ‘Product Designer based in London’ and this field is responsible for part of the substring ‘Product Designer’",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "translations": "translate",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_64eb63fee61f9",
-            "label": "Your current location",
-            "name": "location",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "This field is for a piece of text that looks something like this on your website: ‘Product Designer based in London’ and this field is responsible for part of the substring ‘London’. Essentially this is your location.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "translations": "translate",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_64eb65c49d0a4",
@@ -148,5 +106,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694336150
+    "modified": 1696254792
 }

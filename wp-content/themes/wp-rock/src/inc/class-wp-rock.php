@@ -321,8 +321,8 @@ class WP_Rock {
 
         // remove auto adding paragraph.
         remove_filter( 'the_content', 'wptexturize' );
-        remove_filter( 'the_excerpt', 'wpautop' );
-        remove_filter( 'acf_the_content', 'wpautop' );
+//        remove_filter( 'the_excerpt', 'wpautop' );
+//        remove_filter( 'acf_the_content', 'wpautop' );
 
         // File Size notification in admin area.
         add_action(

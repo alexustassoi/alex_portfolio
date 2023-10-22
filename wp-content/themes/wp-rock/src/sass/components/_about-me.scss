@@ -1,6 +1,6 @@
 .about-me {
     padding-top: 100px;
-    padding-bottom: 126px;
+    padding-bottom: 80px;
 
     &__content-wrap {
 
@@ -12,11 +12,11 @@
 
     &__content {
         display: flex;
+        justify-content: space-between;
     }
 
     &__left-col {
-        min-width: 400px;
-        margin-right: 145px;
+        margin-right: 70px;
     }
 
     &__owner-main-wrap {
@@ -26,6 +26,7 @@
 
     &__owner-img-wrap {
         max-width: 367px;
+        min-width: 367px;
         max-height: 409px;
         margin-bottom: 32px;
         position: relative;
@@ -91,10 +92,13 @@
     &__sub-title-wrap {
         margin-bottom: 32px;
 
-        * {
+        h5 {
             letter-spacing: -0.72px;
             text-align: center;
-            font-size: 24px;
+
+            strong {
+                font-style: italic;
+            }
         }
     }
 
@@ -105,6 +109,7 @@
 
     &__right-col {
         width: 100%;
+        max-width: 660px;
     }
 
     &__contact-data {

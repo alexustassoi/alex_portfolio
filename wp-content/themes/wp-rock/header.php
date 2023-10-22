@@ -35,6 +35,8 @@ if ( function_exists( 'get_field' ) ) {
 
 <?php do_action( 'wp_rock_after_open_body_tag' ); ?>
 
+<div class="scroll-to-top-button js-scrollToTopBtn" data-role="scroll-to-top"></div>
+
 <div id="wrapper" class="wrapper">
 
     <?php do_action( 'wp_rock_before_site_header' ); ?>

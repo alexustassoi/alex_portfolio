@@ -29,12 +29,13 @@ $social_repeater = get_field_value($global_options, 'social_repeater');
     if ($social_repeater) { ?>
         <div class="custom-sidebar__social-wrap">
             <?php foreach ($social_repeater as $item) {
-                $icon = get_field_value($item, 'icon');
-                $link = get_field_value($item, 'link');
-                $image_id = attachment_url_to_postid( $icon );
-                list($image_src, $image_width, $image_height) = wp_get_attachment_image_src( $image_id, 'default', true );
+                $icon       = get_field_value($item, 'icon');
+                $hover_icon = get_field_value($item, 'hover_icon');
+                $link       = get_field_value($item, 'link');
+                $image_id   = attachment_url_to_postid($icon);
+                list($image_src, $image_width, $image_height) = wp_get_attachment_image_src($image_id, 'default', true);
 
-                echo '<a class="custom-sidebar__social-item" href="' . do_shortcode($link) . '"><img src="' . do_shortcode($icon) . '" alt="Social icon"></a>';
+                echo '<a class="custom-sidebar__social-item" href="' . do_shortcode($link) . '"><img class="custom-sidebar__social-icon" src="' . do_shortcode($icon) . '" alt="Social icon" /><img class="custom-sidebar__social-h-icon" src="' . do_shortcode($hover_icon) . '" alt="Social icon" /></a>';
             } ?>
         </div>
     <?php }

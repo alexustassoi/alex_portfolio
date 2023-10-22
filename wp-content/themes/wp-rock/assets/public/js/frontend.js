@@ -1,6 +1,54 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/components/toggleCurrentMenuItem.ts":
+/*!****************************************************!*\
+  !*** ./src/js/components/toggleCurrentMenuItem.ts ***!
+  \****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+var toggleCurrentMenuItem = function toggleCurrentMenuItem() {
+  var targetElem = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  if (!targetElem) {
+    throw Error('toggleCurrentMenuItem function - "Target element was not provided"');
+  }
+  var menuItems = window.document.querySelectorAll('.js-l-sidebar-item');
+  var parentItem = targetElem.closest('.js-l-sidebar-item');
+  menuItems && _toConsumableArray(menuItems).forEach(function (item) {
+    item.classList.remove('current-item');
+  });
+  parentItem && parentItem.classList.add('current-item');
+};
+/* harmony default export */ __webpack_exports__["default"] = (toggleCurrentMenuItem);
+
+/***/ }),
+
+/***/ "./src/js/components/toggleScrollBtnTop.ts":
+/*!*************************************************!*\
+  !*** ./src/js/components/toggleScrollBtnTop.ts ***!
+  \*************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var toggleScrollBtnTop = function toggleScrollBtnTop() {
+  var scrollToTopBtn = window.document.querySelector('.js-scrollToTopBtn');
+  var actionType = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 ? 'add' : 'remove';
+  if (!scrollToTopBtn) return;
+  scrollToTopBtn.classList[actionType]('active');
+};
+/* harmony default export */ __webpack_exports__["default"] = (toggleScrollBtnTop);
+
+/***/ }),
+
 /***/ "./src/sass/frontend.scss":
 /*!********************************!*\
   !*** ./src/sass/frontend.scss ***!
@@ -834,7 +882,7 @@ function anchorLinkScroll(elementsSelector = null, callback = null) {
                         top: ANCHOR_ELEMENT.offsetTop,
                     });
 
-                if (callback) callback();
+                if (callback) callback(event.target);
             });
         });
 }
@@ -931,7 +979,6 @@ class Popup {
      */
     openPopup() {
         this.body.addEventListener('click', (event) => {
-            console.log('js-open-popup-activator', event.target.classList);
             if (
                 ![...event.target.classList].includes('js-open-popup-activator')
             ) {
@@ -1066,11 +1113,97 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_frontend_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/frontend.scss */ "./src/sass/frontend.scss");
 /* harmony import */ var _parts_popup_window__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/popup-window */ "./src/js/parts/popup-window.js");
+/* harmony import */ var _parts_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/helpers */ "./src/js/parts/helpers.js");
+/* harmony import */ var _components_toggleCurrentMenuItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/toggleCurrentMenuItem */ "./src/js/components/toggleCurrentMenuItem.ts");
+/* harmony import */ var _components_toggleScrollBtnTop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/toggleScrollBtnTop */ "./src/js/components/toggleScrollBtnTop.ts");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+
+
+
 
 
 function ready() {
+  var fileInputs = document.querySelectorAll('.wpcf7-file');
   var popupInstance = new _parts_popup_window__WEBPACK_IMPORTED_MODULE_1__["default"]();
   popupInstance.init();
+  (0,_parts_helpers__WEBPACK_IMPORTED_MODULE_2__.anchorLinkScroll)('.js-l-sidebar-item a', _components_toggleCurrentMenuItem__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  (0,_parts_helpers__WEBPACK_IMPORTED_MODULE_2__.anchorLinkScroll)('.js-anchorLink', _components_toggleCurrentMenuItem__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  window.document.addEventListener('scroll', function () {
+    (0,_components_toggleScrollBtnTop__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  });
+  document.body.addEventListener('click', function (event) {
+    var target = event.target;
+    var ROLE = target.dataset.role;
+    if (!ROLE) return;
+    switch (ROLE) {
+      case 'toggle-accordion-item':
+        {
+          var parentItem = target.closest('.js-accordion-item');
+          var accordionTtems = window.document.querySelectorAll('.js-accordion-item');
+          var actionType = parentItem && parentItem.classList.contains('active') ? 'remove' : 'add';
+          accordionTtems && _toConsumableArray(accordionTtems).forEach(function (item) {
+            item.classList.remove('active');
+          });
+          parentItem.classList[actionType]('active');
+          break;
+        }
+      case 'scroll-to-top':
+        {
+          window.scroll({
+            top: 0,
+            behavior: 'smooth'
+          });
+          break;
+        }
+      case 'load-more-projects':
+        {
+          var worksItemsElem = window.document.querySelector('.js-works-items');
+          var postShown = target.dataset.postsShown;
+          var loadStep = target.dataset.loadStep;
+          if (!postShown || !worksItemsElem || !loadStep) return;
+          var data = new FormData();
+          data.append('action', 'load-more-projects');
+          data.append('postShown', postShown);
+          data.append('loadStep', loadStep);
+          fetch(var_from_php.ajax_url, {
+            method: 'POST',
+            credentials: 'same-origin',
+            body: data
+          }).then(function (response) {
+            return response.json();
+          }).then(function (request) {
+            if (request.success && request.data) {
+              worksItemsElem.insertAdjacentHTML('beforeend', request.data.data);
+              target.dataset.postsShown = String(+postShown + +loadStep);
+            } else {
+              worksItemsElem.insertAdjacentHTML('beforeend', request.data.data);
+              target.classList.add('not-active');
+            }
+          });
+          break;
+        }
+      default:
+        break;
+    }
+  });
+  fileInputs && _toConsumableArray(fileInputs).forEach(function (item) {
+    item.addEventListener('change', function () {
+      var parentInputWrap = item.closest('.js-input-wrapper');
+      var fileNameElem = parentInputWrap ? parentInputWrap.querySelector('.js-file-name') : null;
+      if (!fileNameElem) return;
+      if (item.files && item.files[0]) {
+        var fileName = item.files[0].name;
+        fileNameElem.textContent = " ".concat(fileName);
+      } else {
+        fileNameElem.textContent = '';
+      }
+    });
+  });
 }
 window.document.addEventListener('DOMContentLoaded', ready);
 }();

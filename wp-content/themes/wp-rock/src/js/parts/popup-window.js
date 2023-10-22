@@ -75,7 +75,6 @@ export default class Popup {
      */
     openPopup() {
         this.body.addEventListener('click', (event) => {
-            console.log('js-open-popup-activator', event.target.classList);
             if (
                 ![...event.target.classList].includes('js-open-popup-activator')
             ) {

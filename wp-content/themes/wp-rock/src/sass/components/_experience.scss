@@ -3,15 +3,16 @@
     padding-bottom: 140px;
     background: var(--wp--gradient--experience-bg);
     padding-right: 115px;
+    margin-top: 60px;
 
     &__content-wrap {
         display: flex;
+        justify-content: space-between;
     }
 
     &__left-col {
-        min-width: 395px;
         max-width: 396px;
-        margin-right: 192px;
+        margin-right: 70px;
     }
 
     &__pre-title,
@@ -35,6 +36,7 @@
 
     &__right-col {
         width: 100%;
+        max-width: 545px;
     }
 
     &__items {

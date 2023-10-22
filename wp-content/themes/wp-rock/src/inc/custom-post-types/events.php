@@ -7,48 +7,64 @@
  */
 
 /*
-$labels = array(
-    'name' => _x( 'Events', 'Post type general name', 'wp-rock' ),
-    'singular_name' => _x( 'Events', 'Post type singular name', 'wp-rock' ),
-    'menu_name' => _x( 'Events', 'Admin Menu text', 'wp-rock' ),
-    'name_admin_bar' => _x( 'Events', 'Add New on Toolbar', 'wp-rock' ),
-    'add_new' => __( 'Add New', 'wp-rock' ),
-    'add_new_item' => __( 'Add New Events', 'wp-rock' ),
-    'new_item' => __( 'New Events', 'wp-rock' ),
-    'edit_item' => __( 'Edit Events', 'wp-rock' ),
-    'view_item' => __( 'View Events', 'wp-rock' ),
-    'all_items' => __( 'All Events', 'wp-rock' ),
-    'search_items' => __( 'Search Events', 'wp-rock' ),
-    'parent_item_colon' => __( 'Parent Events:', 'wp-rock' ),
-    'not_found' => __( 'No books found.', 'wp-rock' ),
-    'not_found_in_trash' => __( 'No books found in Trash.', 'wp-rock' ),
-    'featured_image' => _x( 'Events Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'wp-rock' ),
-    'set_featured_image' => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'wp-rock' ),
-    'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'wp-rock' ),
-    'use_featured_image' => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'wp-rock' ),
-    'archives' => _x( 'Events archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'wp-rock' ),
-    'insert_into_item' => _x( 'Insert into book', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'wp-rock' ),
-    'uploaded_to_this_item' => _x( 'Uploaded to this book', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'wp-rock' ),
-    'filter_items_list' => _x( 'Filter books list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'wp-rock' ),
-    'items_list_navigation' => _x( 'Events list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'wp-rock' ),
-    'items_list' => _x( 'Events list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'wp-rock' ),
-);
-$args   = array(
-    'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true,
-    'show_in_menu' => true,
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'events' ),
-    'capability_type' => 'post',
-    'show_in_rest' => true,
-    'has_archive' => true,
-    'hierarchical' => false,
-    'menu_position' => null,
-    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' ),
-    'taxonomies' => array( 'events-category', 'events-tags' ),
-);
 
-register_post_type( 'events', $args );
-*/
+/**
+ * Registers a new post type
+ *
+ * @param string  Post type key, must not exceed 20 characters
+ * @param array|string  See optional args description above.
+ *
+ * @return object|WP_Error the registered post type object, or an error object
+ * @uses $wp_post_types Inserts new post type object into the list
+ *
+ */
+function recent_projects_register_name() {
+
+    $labels = array(
+        'name'               => __( 'Projects', 'wp-rock' ),
+        'singular_name'      => __( 'Project', 'wp-rock' ),
+        'add_new'            => _x( 'Add New Project', 'wp-rock', 'wp-rock' ),
+        'add_new_item'       => __( 'Add New Project', 'wp-rock' ),
+        'edit_item'          => __( 'Edit Project', 'wp-rock' ),
+        'new_item'           => __( 'New Project', 'wp-rock' ),
+        'view_item'          => __( 'View Project', 'wp-rock' ),
+        'search_items'       => __( 'Search Project', 'wp-rock' ),
+        'not_found'          => __( 'No Project found', 'wp-rock' ),
+        'not_found_in_trash' => __( 'No Projects found in Trash', 'wp-rock' ),
+        'parent_item_colon'  => __( 'Parent Project:', 'wp-rock' ),
+        'menu_name'          => __( 'Recent Projects', 'wp-rock' ),
+    );
+
+    $args = array(
+        'labels'              => $labels,
+        'hierarchical'        => true,
+        'description'         => 'description',
+        'taxonomies'          => array(),
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_admin_bar'   => true,
+        'menu_icon'           => 'dashicons-admin-post',
+        'menu_position'       => null,
+        'show_in_nav_menus'   => true,
+        'publicly_queryable'  => true,
+        'exclude_from_search' => true,
+        'has_archive'         => true,
+        'query_var'           => true,
+        'can_export'          => true,
+        'rewrite'             => true,
+        'capability_type'     => 'post',
+        'show_in_rest'        => true,
+        'supports'            => array(
+            'title',
+            'editor',
+            'custom-fields',
+            'page-attributes',
+            'thumbnail',
+            'excerpt'
+        ),
+    );
+
+    register_post_type( 'recent_projects', $args );
+}
+add_action( 'init', 'recent_projects_register_name' );

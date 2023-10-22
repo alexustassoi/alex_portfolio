@@ -355,7 +355,7 @@ export function anchorLinkScroll(elementsSelector = null, callback = null) {
                         top: ANCHOR_ELEMENT.offsetTop,
                     });
 
-                if (callback) callback();
+                if (callback) callback(event.target);
             });
         });
 }

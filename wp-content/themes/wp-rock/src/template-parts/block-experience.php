@@ -29,7 +29,7 @@ $experience_repeater = get_field_value($fields, 'experience_repeater');
                 : '';
 
             echo ($title)
-                ? '<h2 class="experience__title">' . do_shortcode($title) . '</h2>'
+                ? '<h2 class="experience__title section-title">' . do_shortcode($title) . '</h2>'
                 : '';
 
             echo ($description)

@@ -14,18 +14,16 @@ $email     = get_field_value($global_options, 'email');
 $age       = get_field_value($global_options, 'age');
 $location  = get_field_value($global_options, 'location');
 
-$fields             = get_fields();
-$title              = get_field_value($fields, 'title');
-$pre_title_text     = get_field_value($fields, 'pretitle_text');
-$owner_photo        = get_field_value($fields, 'owner_photo');
-$owner_signature    = get_field_value($fields, 'owner_signature');
-$download_btn_text  = get_field_value($fields, 'download_btn_text');
-$download_btn_file  = get_field_value($fields, 'download_btn_file');
-$info_item_repeater = get_field_value($fields, 'info_item_repeater');
-$quote_text         = get_field_value($fields, 'quote_text');
-$sub_title          = get_field_value($fields, 'sub_title');
-$pro_status         = get_field_value($fields, 'pro_status');
-$your_location      = get_field_value($fields, 'your_location');
+$fields                  = get_fields();
+$title                   = get_field_value($fields, 'title');
+$pre_title_text          = get_field_value($fields, 'pretitle_text');
+$owner_photo             = get_field_value($fields, 'owner_photo');
+$owner_signature         = get_field_value($fields, 'owner_signature');
+$download_btn_text       = get_field_value($fields, 'download_btn_text');
+$download_btn_file       = get_field_value($fields, 'download_btn_file');
+$info_item_repeater      = get_field_value($fields, 'info_item_repeater');
+$quote_text              = get_field_value($fields, 'quote_text');
+$job_status_and_location = get_field_value($fields, 'job_status_and_location');
 
 ?>
 
@@ -37,7 +35,7 @@ $your_location      = get_field_value($fields, 'your_location');
             : '';
 
         echo ($title)
-            ? '<h2 class="about-me__title">' . do_shortcode($title) . '</h2>'
+            ? '<h2 class="about-me__title section-title">' . do_shortcode($title) . '</h2>'
             : '';
         ?>
 
@@ -63,16 +61,8 @@ $your_location      = get_field_value($fields, 'your_location');
 
                 <div class="about-me__sub-title-wrap">
                     <?php
-                    echo ($pro_status)
-                        ? '<span class="about-me__pro-status">' . esc_html($pro_status) . '</span>'
-                        : '';
-
-                    echo ($sub_title)
-                        ? '<span class="about-me__sub-title">' . esc_html($sub_title) . '</span>'
-                        : '';
-
-                    echo ($your_location)
-                        ? '<span class="about-me__location">' . esc_html($your_location) . '</span>'
+                    echo ($job_status_and_location)
+                        ? do_shortcode($job_status_and_location)
                         : '';
                     ?>
                 </div>

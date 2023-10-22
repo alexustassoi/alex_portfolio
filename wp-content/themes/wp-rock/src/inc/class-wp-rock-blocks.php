@@ -41,6 +41,24 @@ class WP_Rock_Blocks {
             'template' => 'src/template-parts/block-experience.php',
             'post_types' => array( 'post', 'page' ),
         ),
+        'service' => array(
+            'title' => 'Service Block',
+            'description' => '',
+            'template' => 'src/template-parts/block-service.php',
+            'post_types' => array( 'post', 'page' ),
+        ),
+        'contact' => array(
+            'title' => 'Contact Block',
+            'description' => '',
+            'template' => 'src/template-parts/block-contact.php',
+            'post_types' => array( 'post', 'page' ),
+        ),
+        'recent-project' => array(
+            'title' => ' Recent project Block',
+            'description' => '',
+            'template' => 'src/template-parts/block-recent-project.php',
+            'post_types' => array( 'post', 'page' ),
+        ),
     );
     /**
      * List of Allowed blocks

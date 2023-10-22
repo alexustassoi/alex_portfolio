@@ -17,7 +17,33 @@
             background-color: var(--wp--color--sidebar-social-bg);
             opacity: 1;
             border: none;
+
+            &:hover {
+                background: var(--wp--gradient--orange-to-lilac);
+
+                .custom-sidebar {
+                    &__social-icon {
+                        opacity: 0;
+                        width: 0;
+                    }
+
+                    &__social-h-icon {
+                        opacity: 1;
+                        width: auto;
+                    }
+                }
+            }
         }
+    }
+
+    &__social-icon {
+        opacity: 1;
+        width: auto;
+    }
+
+    &__social-h-icon {
+        opacity: 0;
+        width: 0;
     }
 
     &__right {
@@ -85,8 +111,7 @@
                 content: '';
                 display: block;
                 left: 0;
-                top: 50%;
-                transform: translateY(-50%);
+                bottom: 0;
                 width: 100%;
                 height: 4px;
                 z-index: -1;
@@ -95,7 +120,13 @@
                 transition: opacity .5s ease-out;
             }
 
-            &.active-menu-item {
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+            }
+
+            &.current-item {
                 &:after {
                     opacity: 1;
                 }
@@ -140,7 +171,6 @@
         }
 
         img {
-            width: fit-content;
             height: auto;
             object-fit: contain;
         }
