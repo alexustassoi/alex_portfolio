@@ -36,14 +36,12 @@ $experience_repeater = get_field_value($fields, 'experience_repeater');
                 ? '<p class="experience__description">' . do_shortcode($description) . '</p>'
                 : '';
 
-            if ($download_file && $download_btn_text && $full_name) {
-                $words           = explode(' ', $full_name);
-                $lowercase_words = array_map('strtolower', $words);
-                $file_prefix     = implode('_', $lowercase_words);
-                ?>
-                <a href="<?php echo do_shortcode($download_file); ?>" class="experience__btn button"
-                   download="<?php echo esc_html($file_prefix); ?>_cv.pdf"><?php echo do_shortcode($download_btn_text); ?></a>
-            <?php } ?>
+            $args = [
+                'custom_class' => 'desktop'
+            ];
+
+            include(locate_template('src/template-parts/template-experience-btn.php', false, false, $args));
+            ?>
         </div>
         <div class="experience__right-col">
             <?php if ($experience_repeater) { ?>
@@ -75,5 +73,12 @@ $experience_repeater = get_field_value($fields, 'experience_repeater');
                 </div>
             <?php } ?>
         </div>
+        <?php
+        $args = [
+            'custom_class' => 'mobile'
+        ];
+
+        include(locate_template('src/template-parts/template-experience-btn.php', false, false, $args));
+        ?>
     </div>
 </section>

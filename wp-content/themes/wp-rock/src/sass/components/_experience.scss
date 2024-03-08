@@ -3,8 +3,6 @@
     padding-bottom: 140px;
     background: var(--wp--gradient--experience-bg);
     padding-right: 115px;
-    margin-top: 60px;
-    //display: none;
 
     @include max-break(1750px) {
         padding-right: 90px;
@@ -16,7 +14,6 @@
     }
 
     @include max-break(1470px) {
-        margin-top: 30px;
         padding-right: 70px;
     }
 
@@ -34,12 +31,22 @@
     }
 
     @include max-break(670px) {
-        margin-top: 0;
+        padding-bottom: 65px;
+        padding-top: 60px;
+    }
+
+    @include max-break(570px) {
+        padding-bottom: 40px;
+        padding-top: 40px;
     }
 
     &__content-wrap {
         display: flex;
         justify-content: space-between;
+
+        @include max-break(670px) {
+            flex-direction: column;
+        }
     }
 
     &__left-col {
@@ -49,6 +56,17 @@
 
         @include max-break(1370px) {
             min-width: 350px;
+        }
+
+        @include max-break(670px) {
+            margin-right: 0;
+            margin-bottom: 50px;
+            max-width: unset;
+            min-width: unset;
+        }
+
+        @include max-break(570px) {
+            margin-bottom: 40px;
         }
     }
 
@@ -63,17 +81,44 @@
 
     &__title {
         margin-bottom: 24px;
+
+        @include max-break(570px) {
+            margin-bottom: 15px;
+        }
     }
 
     &__description {
         margin-bottom: 48px;
         max-width: 385px;
         line-height: 1.55;
+
+        @include max-break(670px) {
+            max-width: 100%;
+            margin-bottom: 0;
+            font-size: 22px;
+        }
+
+        @include max-break(570px) {
+            font-size: 14px;
+        }
     }
 
     &__right-col {
         width: 100%;
         max-width: 545px;
+
+        @include max-break(768px) {
+            max-width: 50%;
+        }
+
+        @include max-break(670px) {
+            max-width: unset;
+            margin-bottom: 50px;
+        }
+
+        @include max-break(480px) {
+            margin-bottom: 35px;
+        }
     }
 
     &__items {
@@ -82,6 +127,14 @@
 
     &__item {
         margin-bottom: 60px;
+
+        @include max-break(670px) {
+            margin-bottom: 35px;
+        }
+
+        @include max-break(570px) {
+            margin-bottom: 25px;
+        }
 
         &:last-of-type {
             margin-bottom: 0;
@@ -92,6 +145,10 @@
         margin-bottom: 12px;
         display: flex;
         justify-content: space-between;
+
+        @include max-break(570px) {
+            margin-bottom: 5px;
+        }
     }
 
     &__working-period {
@@ -99,6 +156,14 @@
         font-style: italic;
         font-weight: 700;
         line-height: 1.33;
+
+        @include max-break(570px) {
+            font-size: 14px;
+        }
+
+        @include max-break(480px) {
+            font-size: 12px;
+        }
     }
 
     &__working-location {
@@ -106,12 +171,39 @@
         font-style: normal;
         font-weight: 500;
         line-height: 1.5;
+
+        @include max-break(570px) {
+            font-size: 14px;
+        }
+
+        @include max-break(480px) {
+            font-size: 12px;
+        }
     }
 
     &__job-position {
         font-weight: 700;
         line-height: 1.5;
         text-transform: uppercase;
+    }
+
+    &__btn {
+
+        &.desktop {
+            @include max-break(670px) {
+                display: none;
+            }
+        }
+
+        &.mobile {
+            display: none;
+
+            @include max-break(670px) {
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     }
 }
 
