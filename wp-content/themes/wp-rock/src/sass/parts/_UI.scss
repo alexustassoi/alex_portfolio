@@ -91,7 +91,7 @@ h2 {
     }
 
     @include max-break(570px) {
-        font-size: 32px;
+        font-size: 26px;
     }
 
     @include max-break(480px) {
@@ -113,7 +113,7 @@ h4 {
     font-size: 32px;
 
     @include max-break(1470px) {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     @include max-break(570px) {

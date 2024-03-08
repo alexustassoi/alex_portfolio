@@ -34,16 +34,19 @@ $is_visible     = get_field_value($fields, 'is_visible');
                         $item_desc  = get_field_value($item, 'item_desc');
                         ?>
                         <div class="accordion__item js-accordion-item">
+                            <div class="accordion__item-title-wrap">
+                                <?php
+                                echo ($item_title)
+                                    ? '<h4 class="accordion__item-title" data-role="toggle-accordion-item">' . do_shortcode($item_title) . '</h4>'
+                                    : '';
+                                ?>
+                                <div class="accordion__item-switcher" data-role="toggle-accordion-item"></div>
+                            </div>
                             <?php
-                            echo ($item_title)
-                                ? '<h4 class="accordion__item-title">' . do_shortcode($item_title) . '</h4>'
-                                : '';
-
                             echo ($item_desc)
                                 ? '<div class="accordion__item-desc">' . do_shortcode($item_desc) . '</div>'
                                 : '';
                             ?>
-                            <div class="accordion__item-switcher" data-role="toggle-accordion-item"></div>
                         </div>
                     <?php } ?>
                 </div>

@@ -2,15 +2,29 @@
 
     &__item {
         display: flex;
+        flex-wrap: wrap;
         padding-top: 40px;
-        padding-bottom: 24px;
         border-bottom: 1px solid rgba(20, 19, 19, .2);
+        transition: all var(--wp--transition);
+
+        @media screen and (max-width: 1470px) {
+            padding-top: 24px;
+        }
+
+        @include max-break(480px) {
+            padding-top: 18px;
+        }
 
         &:first-of-type {
             padding-top: 0;
         }
 
         &.active {
+            padding-bottom: 24px;
+
+            @include max-break(320px) {
+                padding-bottom: 20px;
+            }
 
             .accordion {
                 &__item-desc {
@@ -38,33 +52,56 @@
         }
     }
 
+    &__item-title-wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+
+        @include max-break(570px) {
+            padding-bottom: 15px;
+        }
+
+        @include max-break(320px) {
+            padding-bottom: 10px;
+        }
+    }
+
     &__item-title {
-        min-width: 575px;
-        padding-right: 100px;
+        width: 100%;
         padding-left: 48px;
         position: relative;
         z-index: 1;
         color: var(--wp--color--normal-text);
         font-weight: 700;
-        flex: 1;
         transition: all var(--wp--transition);
         text-transform: uppercase;
-
-        @include max-break(1750px) {
-            min-width: 540px;
-            padding-right: 65px;
-        }
+        cursor: pointer;
 
         @include max-break(1470px) {
-            min-width: 470px;
+            font-size: 32px;
         }
 
-        @include max-break(1370px) {
-            min-width: 450px;
+        @include max-break(1280px) {
+            font-size: 28px;
         }
 
-        @include max-break(1030px) {
-            min-width: 480px;
+        @include max-break(570px) {
+            font-size: 22px;
+            padding-left: 35px;
+        }
+
+        @include max-break(480px) {
+            padding-left: 25px;
+            font-size: 20px;
+        }
+
+        @include max-break(375px) {
+            font-size: 18px;
+        }
+
+        @include max-break(320px) {
+            font-size: 16px;
         }
 
         &:after {
@@ -82,15 +119,53 @@
             @include max-break(1470px) {
                 top: 7px;
             }
+
+            @include max-break(570px) {
+                left: 10px;
+            }
+
+            @include max-break(480px) {
+                top: 5px;
+                left: 0;
+            }
+
+            @include max-break(375px) {
+                top: 4px;
+            }
         }
     }
 
     &__item-desc {
-        width: auto;
+        width: calc(100% - 100px);
+        padding-left: 48px;
         max-height: 0;
         overflow: hidden;
         position: static;
         transition: max-height var(--wp--transition);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.2;
+
+        @include max-break(991px) {
+            font-size: 22px;
+        }
+
+        @include max-break(570px) {
+            padding-left: 35px;
+            width: calc(100% - 25px);
+            font-size: 16px;
+        }
+
+        @include max-break(480px) {
+            padding-left: 25px;
+            font-size: 14px;
+        }
+
+        * {
+            font-size: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+        }
 
         img {
             margin-top: 30px;
@@ -101,26 +176,51 @@
     }
 
     &__item-switcher {
-        min-width: 40px;
         width: 40px;
         height: 40px;
-        margin-left: 75px;
+        min-width: 40px;
+        max-width: max-content;
+        flex-shrink: 0;
+        padding-left: 75px;
         position: relative;
         z-index: 1;
         cursor: pointer;
-        flex: 1;
+
+        @include max-break(570px) {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+        }
+
+        @include max-break(480px) {
+            height: 25px;
+            min-width: 25px;
+            width: 25px;
+        }
 
         &:after {
             position: absolute;
             content: '';
             display: block;
-            left: 0;
+            left: 35px;
             top: 0;
             width: 40px;
             height: 40px;
             z-index: 1;
             background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNi42NjY2OSAyMEgzMy4zMzM0IiBzdHJva2U9IiMxNDEzMTMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTIwIDYuNjY2OTlWMzMuMzMzNyIgc3Ryb2tlPSIjMTQxMzEzIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==) center center no-repeat;
             background-size: contain;
+
+            @include max-break(570px) {
+                left: 45px;
+                width: 30px;
+                height: 30px;
+            }
+
+            @include max-break(480px) {
+                left: 50px;
+                width: 25px;
+                height: 25px;
+            }
         }
     }
 }

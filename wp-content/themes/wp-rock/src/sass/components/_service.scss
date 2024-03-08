@@ -1,18 +1,51 @@
 .service {
     padding-top: 80px;
     padding-bottom: 92px;
-    display: none;
+
+    @include max-break(850px) {
+        padding-top: 65px;
+        padding-bottom: 70px;
+    }
+
+    @include max-break(670px) {
+        padding-bottom: 55px;
+        padding-top: 55px;
+    }
+
+    @include max-break(570px) {
+        padding-top: 40px;
+    }
+
+    @include max-break(480px) {
+        padding-top: 30px;
+    }
 
     &__content-wrap {
 
     }
 
     &__title {
+        @include max-break(670px) {
+            margin-bottom: 30px;
+        }
 
+        @include max-break(320px) {
+            margin-bottom: 25px;
+        }
     }
 
     &__content {
+        @include max-break(768px) {
+            zoom: 1.4;
+        }
 
+        @include max-break(670px) {
+            zoom: 1.1;
+        }
+
+        @include max-break(570px) {
+            zoom: 1;
+        }
     }
 
     &__accordion {
