@@ -54,29 +54,32 @@ $job_status_and_location = get_field_value($fields, 'job_status_and_location');
                                  src="<?php echo esc_html($owner_photo); ?>" alt="Owner"/>
                         </figure>
                     </div>
-                <?php }
-                echo ($full_name)
-                    ? '<h2 class="about-me__full-name">' . do_shortcode($full_name) . '</h2>'
-                    : ''; ?>
-
-                <div class="about-me__sub-title-wrap">
-                    <?php
-                    echo ($job_status_and_location)
-                        ? do_shortcode($job_status_and_location)
-                        : '';
-                    ?>
-                </div>
-                <?php if ($download_btn_file && $download_btn_text && $full_name) {
-                    $words           = explode(' ', $full_name);
-                    $lowercase_words = array_map('strtolower', $words);
-                    $file_prefix     = implode('_', $lowercase_words);
-                    ?>
-                    <a class="about-me__download-btn download-btn"
-                       href="<?php echo esc_html($download_btn_file); ?>"
-                       download="<?php echo esc_html($file_prefix); ?>_cv.pdf">
-                        <?php echo do_shortcode($download_btn_text); ?>
-                    </a>
                 <?php } ?>
+                <div class="about-me__owner-data">
+                    <?php
+                    echo ($full_name)
+                        ? '<h2 class="about-me__full-name">' . do_shortcode($full_name) . '</h2>'
+                        : ''; ?>
+
+                    <div class="about-me__sub-title-wrap">
+                        <?php
+                        echo ($job_status_and_location)
+                            ? do_shortcode($job_status_and_location)
+                            : '';
+                        ?>
+                    </div>
+                    <?php if ($download_btn_file && $download_btn_text && $full_name) {
+                        $words           = explode(' ', $full_name);
+                        $lowercase_words = array_map('strtolower', $words);
+                        $file_prefix     = implode('_', $lowercase_words);
+                        ?>
+                        <a class="about-me__download-btn download-btn"
+                           href="<?php echo esc_html($download_btn_file); ?>"
+                           download="<?php echo esc_html($file_prefix); ?>_cv.pdf">
+                            <?php echo do_shortcode($download_btn_text); ?>
+                        </a>
+                    <?php } ?>
+                </div>
             </div>
             <div class="about-me__right-col">
                 <div class="about-me__contact-data">
@@ -124,9 +127,9 @@ $job_status_and_location = get_field_value($fields, 'job_status_and_location');
                                         <?php echo do_shortcode($item_title); ?>
                                     </div>
                                 </div>
-                                <p class="about-me__experience-text">
+                                <div class="about-me__experience-text">
                                     <?php echo do_shortcode($item_text); ?>
-                                </p>
+                                </div>
                             </div>
                         <?php } ?>
                     </div>

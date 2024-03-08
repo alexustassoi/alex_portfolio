@@ -19,6 +19,7 @@
 #main-wrapper {
     width: 100vw; 
     min-width: 100%;
+    min-height: 100vh;
 }
 
 #wrapper {
@@ -76,10 +77,22 @@ body {
 }
 
 .pre-title {
+    color: rgb(20, 19, 19);
+    font-size: 18px;
     font-style: italic;
     font-weight: 600;
     line-height: 1.33;
     margin-bottom: 16px;
+
+    @include max-break(570px) {
+        margin-bottom: 12px;
+        font-size: 14px;
+    }
+
+    @include max-break(480px) {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
 }
 
 section {
@@ -129,6 +142,10 @@ section {
     @include max-break(991px) {
         zoom: .6;
     }
+
+    @include max-break(570px) {
+        zoom: 1;
+    }
 }
 
 .container-inner {
@@ -152,10 +169,15 @@ section {
         padding-right: 60px;
     }
 
-    //@include max-break('1360px') {
-    //    max-width: 1240px;
-    //    padding: 0;
-    //}
+    @include max-break(670px) {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    @include max-break(570px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
     @include max-break(small) {
         width: 100%;
@@ -250,6 +272,7 @@ ol {
     z-index: 1;
     border-radius: 50%;
     overflow: hidden;
+    flex-shrink: 0;
 
     &:before {
         position: absolute;

@@ -2,6 +2,7 @@
     padding-top: 105px;
     padding-bottom: 100px;
     height: max-content;
+    display: none;
 
     @include max-break(1600px) {
         padding-bottom: 70px;

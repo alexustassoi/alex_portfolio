@@ -4,6 +4,7 @@
     background: var(--wp--gradient--experience-bg);
     padding-right: 115px;
     margin-top: 60px;
+    //display: none;
 
     @include max-break(1750px) {
         padding-right: 90px;
@@ -30,6 +31,10 @@
 
     @include max-break(850px) {
         padding-right: 0;
+    }
+
+    @include max-break(670px) {
+        margin-top: 0;
     }
 
     &__content-wrap {
