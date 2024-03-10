@@ -2,6 +2,10 @@
     padding-top: 80px;
     padding-bottom: 92px;
 
+    @include max-break(1280px) {
+        padding-bottom: 80px;
+    }
+
     @include max-break(850px) {
         padding-top: 65px;
         padding-bottom: 70px;
@@ -14,10 +18,12 @@
 
     @include max-break(570px) {
         padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     @include max-break(480px) {
         padding-top: 30px;
+        padding-bottom: 24px;
     }
 
     &__content-wrap {

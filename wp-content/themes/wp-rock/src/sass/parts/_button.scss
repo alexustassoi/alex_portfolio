@@ -19,7 +19,19 @@
         font-size: 16px;
     }
 
-    @include max-break(991px) {
+    @include max-break(1199px) {
+        font-size: 18px;
+    }
+
+    @include max-break(670px) {
+        font-size: 20px;
+    }
+
+    @include max-break(570px) {
+        font-size: 18px;
+    }
+
+    @include max-break(480px) {
         font-size: 14px;
     }
 }
