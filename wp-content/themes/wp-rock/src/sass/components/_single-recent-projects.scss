@@ -1,0 +1,33 @@
+.single {
+    &.single-recent_projects {
+        .custom-sidebar {
+            &__right {
+                display: none;
+            }
+        }
+
+        .content-wrapper {
+            width: calc(100% - 285px);
+
+            @include max-break(1750px) {
+                width: calc(100% - 265px);
+            }
+
+            @include max-break(1600px) {
+                width: calc(100% - 250px);
+            }
+
+            @include max-break(1280px) {
+                width: calc(100% - 210px);
+            }
+
+            @include max-break(1030px) {
+                width: calc(100% - 170px);
+            }
+
+            @include max-break(768px) {
+                width: calc(100% - 230px);
+            }
+        }
+    }
+}

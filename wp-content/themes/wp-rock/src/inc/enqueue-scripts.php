@@ -22,6 +22,10 @@ function get_file_modification_time( $file_path ) {
  * @return void
  */
 function px_site_scripts() {
+    global $global_options;
+    $hero_version_2_group_1_speed = get_field_value( $global_options, 'hero_version_2_group_1_speed' );
+    $hero_version_2_group_2_speed = get_field_value( $global_options, 'hero_version_2_group_2_speed' );
+    $hero_version_2_group_3_speed = get_field_value( $global_options, 'hero_version_2_group_3_speed' );
 
     $general_style_ver = get_file_modification_time( get_stylesheet_directory() . '/style.css' );
     $custom_style_ver = get_file_modification_time( get_stylesheet_directory() . '/assets/public/css/frontend.css' );
@@ -49,6 +53,9 @@ function px_site_scripts() {
         'theme_path' => get_stylesheet_directory_uri(),
         'site_url' => get_site_url(),
         'thanks' => $link_thanks,
+        'hero_version_2_group_1_speed' => $hero_version_2_group_1_speed,
+        'hero_version_2_group_2_speed' => $hero_version_2_group_2_speed,
+        'hero_version_2_group_3_speed' => $hero_version_2_group_3_speed,
     );
 
     wp_localize_script( 'frontend_js', 'var_from_php', $vars );

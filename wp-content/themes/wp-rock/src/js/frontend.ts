@@ -8,6 +8,7 @@ import '../sass/frontend.scss';
 // import Sliders from './components/swiper-init';
 import Popup from './parts/popup-window';
 import {anchorLinkScroll} from './parts/helpers';
+import SlickSliders from "./components/slick-init";
 import toggleCurrentMenuItem from './components/toggleCurrentMenuItem';
 import toggleScrollBtnTop from "./components/toggleScrollBtnTop";
 import toggleBurgerMenu from "./components/toggleBurgerMenu";
@@ -20,6 +21,10 @@ function ready() {
 
     anchorLinkScroll('.js-l-sidebar-item a', toggleCurrentMenuItem);
     anchorLinkScroll('.js-anchorLink', toggleCurrentMenuItem);
+
+    // Init Slick Sliders.
+    // @ts-ignore
+    SlickSliders.initSlickSliders(var_from_php);
 
     /**
      * Add handler for scroll event.
