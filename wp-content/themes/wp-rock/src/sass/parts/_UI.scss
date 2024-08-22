@@ -128,6 +128,12 @@ h2 {
     @include max-break(480px) {
         font-size: 24px;
     }
+
+    &.contact-section__title {
+        @include max-break(480px) {
+            margin-bottom: 24px;
+        }
+    }
 }
 
 h3 {
@@ -157,6 +163,25 @@ h4 {
 
     @include max-break(480px) {
         font-size: 16px;
+    }
+
+    &.contact-section__contact-item {
+
+        @include max-break(1600px) {
+            font-size: 28px;
+        }
+
+        @include max-break(1370px) {
+            font-size: 22px;
+        }
+
+        @include max-break(570px) {
+            font-size: 18px;
+        }
+
+        @include max-break(480px) {
+            font-size: 16px;
+        }
     }
 }
 

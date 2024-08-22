@@ -10,6 +10,7 @@ import Popup from './parts/popup-window';
 import {anchorLinkScroll} from './parts/helpers';
 import toggleCurrentMenuItem from './components/toggleCurrentMenuItem';
 import toggleScrollBtnTop from "./components/toggleScrollBtnTop";
+import toggleBurgerMenu from "./components/toggleBurgerMenu";
 
 function ready() {
     const fileInputs = document.querySelectorAll('.wpcf7-file') as NodeList;
@@ -94,13 +95,7 @@ function ready() {
             }
 
             case 'toggle-burger-menu': {
-                const burgerMenu = window.document.querySelector('.js-burger-menu') as HTMLElement;
-                const customSidebarLeft = window.document.querySelector('.js-custom-sidebar-left') as HTMLElement;
-
-                if (!burgerMenu || !customSidebarLeft) return;
-                burgerMenu.classList.toggle('burger-active');
-                customSidebarLeft.classList.toggle('burger-active');
-                window.document.body.classList.toggle('burger-active');
+                toggleBurgerMenu();
 
                 break;
             }

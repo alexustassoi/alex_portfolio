@@ -42,11 +42,11 @@ $shortcode_form  = get_field_value($fields, 'shortcode_form');
                 <?php
                 if ($phone) {
                     $tel_attr = preg_replace('/([\-\s()\/])+/', '', $phone);
-                    echo '<h4><a class="contact-section__phone" href="tel:' . do_shortcode($tel_attr) . '">' . esc_html($phone) . '</a></h4>';
+                    echo '<h4 class="contact-section__contact-item"><a class="contact-section__phone" href="tel:' . do_shortcode($tel_attr) . '">' . esc_html($phone) . '</a></h4>';
                 }
 
                 if ($email) {
-                    echo '<h4><a class="contact-section__email" href="mailto:' . do_shortcode($email) . '">' . esc_html($email) . '</a></h4>';
+                    echo '<h4 class="contact-section__contact-item"><a class="contact-section__email" href="mailto:' . do_shortcode($email) . '">' . esc_html($email) . '</a></h4>';
                 }
                 ?>
             </div>
