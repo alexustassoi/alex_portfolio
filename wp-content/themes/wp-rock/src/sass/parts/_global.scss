@@ -17,7 +17,7 @@
 }
 
 #main-wrapper {
-    width: 100vw; 
+    width: 100vw;
     min-width: 100%;
     min-height: 100vh;
 }
@@ -83,6 +83,10 @@ body {
     font-weight: 600;
     line-height: 1.33;
     margin-bottom: 16px;
+
+    @include max-break(1540px) {
+        margin-bottom: 10px;
+    }
 
     @include max-break(850px) {
         font-size: 24px;
@@ -157,14 +161,10 @@ section {
     //margin: 0 auto;
 
     @include max-break(1750px) {
-        padding-left: 90px;
-    }
-
-    @include max-break(1470px) {
         padding-left: 70px;
     }
 
-    @include max-break(1280px) {
+    @include max-break(1540px) {
         padding-left: 60px;
     }
 
@@ -255,6 +255,14 @@ ol {
 
     @include max-break(1280px) {
         font-size: 16px;
+    }
+
+    @include max-break(768px) {
+        font-size: 18px;
+    }
+
+    @include max-break(570px) {
+        font-size: 14px;
     }
 
     &:hover {

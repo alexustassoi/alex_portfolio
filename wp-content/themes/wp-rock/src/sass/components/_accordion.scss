@@ -112,7 +112,7 @@
             background-color: var(--wp--color--normal-text);
             z-index: 1;
 
-            @include max-break(1470px) {
+            @include max-break(1540px) {
                 top: 7px;
             }
 

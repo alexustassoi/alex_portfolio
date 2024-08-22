@@ -9,8 +9,13 @@
     }
 
     @include max-break(1650px) {
-        padding-top: 100px;
-        padding-bottom: 110px;
+        padding-bottom: 80px;
+        padding-top: 80px;
+    }
+
+    @include max-break(1540px) {
+        padding-bottom: 80px;
+        padding-top: 80px;
     }
 
     @include max-break(1470px) {

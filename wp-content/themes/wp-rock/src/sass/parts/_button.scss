@@ -28,10 +28,6 @@
     }
 
     @include max-break(570px) {
-        font-size: 18px;
-    }
-
-    @include max-break(480px) {
         font-size: 14px;
     }
 }

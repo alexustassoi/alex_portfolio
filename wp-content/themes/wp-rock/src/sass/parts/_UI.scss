@@ -38,6 +38,18 @@ h1 {
         font-size: 50px;
     }
 
+    @include max-break(570px) {
+        font-size: 35px;
+    }
+
+    @include max-break(480px) {
+        font-size: 32px;
+    }
+
+    @include max-break(375px) {
+        font-size: 28px;
+    }
+
     &:after {
         position: absolute;
         content: '';
@@ -70,6 +82,20 @@ h1 {
             left: -35px;
             top: -13px;
         }
+
+        @include max-break(570px) {
+            width: 90px;
+            height: 65px;
+            left: -10px;
+            top: -15px;
+        }
+
+        @include max-break(480px) {
+            width: 75px;
+            height: 50px;
+            left: -10px;
+            top: -10px;
+        }
     }
 
     @include max-break('1024px') {
@@ -85,6 +111,11 @@ h2 {
     font-size: 48px;
     margin-bottom: 48px;
     font-weight: 700;
+
+    @include max-break(1540px) {
+        font-size: 42px;
+        margin-bottom: 35px;
+    }
 
     @include max-break(1470px) {
         font-size: 40px;
@@ -112,8 +143,8 @@ h4 {
     @extend %heading;
     font-size: 32px;
 
-    @include max-break(1470px) {
-        font-size: 28px;
+    @include max-break(1540px) {
+        font-size: 26px;
     }
 
     @include max-break(570px) {
@@ -122,6 +153,10 @@ h4 {
 
     @include max-break(570px) {
         font-size: 18px;
+    }
+
+    @include max-break(480px) {
+        font-size: 16px;
     }
 }
 
@@ -134,7 +169,7 @@ h5 {
     }
 
     @include min-break(480px) {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -143,7 +178,7 @@ h6 {
     font-size: 20px;
 
     @include min-break(480) {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 

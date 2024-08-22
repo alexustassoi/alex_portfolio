@@ -2,13 +2,9 @@
     padding-top: 80px;
     padding-bottom: 92px;
 
-    @include max-break(1280px) {
-        padding-bottom: 80px;
-    }
-
-    @include max-break(850px) {
-        padding-top: 65px;
-        padding-bottom: 70px;
+    @include max-break(1540px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 
     @include max-break(670px) {
@@ -41,6 +37,10 @@
     }
 
     &__content {
+        @include max-break(1540px) {
+            padding-top: 10px;
+        }
+
         @include max-break(768px) {
             zoom: 1.4;
         }

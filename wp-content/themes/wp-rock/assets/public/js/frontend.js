@@ -1,71 +1,7 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/components/toggleCurrentMenuItem.ts":
-/*!****************************************************!*\
-  !*** ./src/js/components/toggleCurrentMenuItem.ts ***!
-  \****************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-var toggleCurrentMenuItem = function toggleCurrentMenuItem() {
-  var targetElem = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-  if (!targetElem) {
-    throw Error('toggleCurrentMenuItem function - "Target element was not provided"');
-  }
-  var menuItems = window.document.querySelectorAll('.js-l-sidebar-item');
-  var parentItem = targetElem.closest('.js-l-sidebar-item');
-  menuItems && _toConsumableArray(menuItems).forEach(function (item) {
-    item.classList.remove('current-item');
-  });
-  parentItem && parentItem.classList.add('current-item');
-};
-/* harmony default export */ __webpack_exports__["default"] = (toggleCurrentMenuItem);
-
-/***/ }),
-
-/***/ "./src/js/components/toggleScrollBtnTop.ts":
-/*!*************************************************!*\
-  !*** ./src/js/components/toggleScrollBtnTop.ts ***!
-  \*************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var toggleScrollBtnTop = function toggleScrollBtnTop() {
-  var scrollToTopBtn = window.document.querySelector('.js-scrollToTopBtn');
-  var actionType = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 ? 'add' : 'remove';
-  if (!scrollToTopBtn) return;
-  scrollToTopBtn.classList[actionType]('active');
-};
-/* harmony default export */ __webpack_exports__["default"] = (toggleScrollBtnTop);
-
-/***/ }),
-
-/***/ "./src/sass/frontend.scss":
-/*!********************************!*\
-  !*** ./src/sass/frontend.scss ***!
-  \********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./node_modules/smoothscroll-polyfill/dist/smoothscroll.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/smoothscroll-polyfill/dist/smoothscroll.js ***!
-  \*****************************************************************/
+/***/ 523:
 /***/ (function(module) {
 
 /* smoothscroll v0.4.4 - 2019 - Dustan Kasten, Jeremias Menichelli - MIT License */
@@ -500,35 +436,78 @@ __webpack_require__.r(__webpack_exports__);
 }());
 
 
-/***/ }),
+/***/ })
 
-/***/ "./src/js/parts/helpers.js":
-/*!*********************************!*\
-  !*** ./src/js/parts/helpers.js ***!
-  \*********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	!function() {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = function(module) {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+!function() {
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   anchorLinkScroll: function() { return /* binding */ anchorLinkScroll; },
-/* harmony export */   closestPolyfill: function() { return /* binding */ closestPolyfill; },
-/* harmony export */   copyToClipboard: function() { return /* binding */ copyToClipboard; },
-/* harmony export */   debounce: function() { return /* binding */ debounce; },
-/* harmony export */   equalHeights: function() { return /* binding */ equalHeights; },
-/* harmony export */   fadeIn: function() { return /* binding */ fadeIn; },
-/* harmony export */   fadeOut: function() { return /* binding */ fadeOut; },
-/* harmony export */   isInViewport: function() { return /* binding */ isInViewport; },
-/* harmony export */   throttle: function() { return /* binding */ throttle; },
-/* harmony export */   trimParagraph: function() { return /* binding */ trimParagraph; },
-/* harmony export */   validateField: function() { return /* binding */ validateField; }
-/* harmony export */ });
-/* harmony import */ var smoothscroll_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smoothscroll-polyfill */ "./node_modules/smoothscroll-polyfill/dist/smoothscroll.js");
-/* harmony import */ var smoothscroll_polyfill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(smoothscroll_polyfill__WEBPACK_IMPORTED_MODULE_0__);
+
+// EXTERNAL MODULE: ./node_modules/smoothscroll-polyfill/dist/smoothscroll.js
+var smoothscroll = __webpack_require__(523);
+var smoothscroll_default = /*#__PURE__*/__webpack_require__.n(smoothscroll);
+;// CONCATENATED MODULE: ./src/js/parts/helpers.js
 
 
 // kick off the polyfill!
-smoothscroll_polyfill__WEBPACK_IMPORTED_MODULE_0___default().polyfill();
+smoothscroll_default().polyfill();
 
 /**
  * Fade Out method
@@ -893,21 +872,7 @@ function anchorLinkScroll(elementsSelector = null, callback = null) {
         });
 }
 
-
-/***/ }),
-
-/***/ "./src/js/parts/popup-window.js":
-/*!**************************************!*\
-  !*** ./src/js/parts/popup-window.js ***!
-  \**************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ Popup; }
-/* harmony export */ });
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ "./src/js/parts/helpers.js");
+;// CONCATENATED MODULE: ./src/js/parts/popup-window.js
 
 
 class Popup {
@@ -953,7 +918,7 @@ class Popup {
 
             bottomMessage;
 
-            (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.fadeOut)(item);
+            fadeOut(item);
             const MAIL_SENT_OK_BOX = item.querySelector('.wpcf7-mail-sent-ok');
             if (MAIL_SENT_OK_BOX) {
                 MAIL_SENT_OK_BOX.style.display = 'none';
@@ -976,7 +941,7 @@ class Popup {
         setTimeout(() => {
             this.body.classList.add('popup-opened');
             this.html.classList.add('popup-opened');
-            (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.fadeIn)(popupSelector);
+            fadeIn(popupSelector);
         }, timeOut);
     }
 
@@ -998,7 +963,7 @@ class Popup {
 
             this.body.classList.add('popup-opened');
             this.html.classList.add('popup-opened');
-            (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.fadeIn)(elHref);
+            fadeIn(elHref);
             return true;
         });
     }
@@ -1038,96 +1003,41 @@ class Popup {
     }
 }
 
-
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-!function() {
-"use strict";
-/*!****************************!*\
-  !*** ./src/js/frontend.ts ***!
-  \****************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _sass_frontend_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/frontend.scss */ "./src/sass/frontend.scss");
-/* harmony import */ var _parts_popup_window__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/popup-window */ "./src/js/parts/popup-window.js");
-/* harmony import */ var _parts_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/helpers */ "./src/js/parts/helpers.js");
-/* harmony import */ var _components_toggleCurrentMenuItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/toggleCurrentMenuItem */ "./src/js/components/toggleCurrentMenuItem.ts");
-/* harmony import */ var _components_toggleScrollBtnTop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/toggleScrollBtnTop */ "./src/js/components/toggleScrollBtnTop.ts");
+;// CONCATENATED MODULE: ./src/js/components/toggleCurrentMenuItem.ts
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+var toggleCurrentMenuItem = function toggleCurrentMenuItem() {
+  var targetElem = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  if (!targetElem) {
+    throw Error('toggleCurrentMenuItem function - "Target element was not provided"');
+  }
+  var menuItems = window.document.querySelectorAll('.js-l-sidebar-item');
+  var parentItem = targetElem.closest('.js-l-sidebar-item');
+  menuItems && _toConsumableArray(menuItems).forEach(function (item) {
+    item.classList.remove('current-item');
+  });
+  parentItem && parentItem.classList.add('current-item');
+};
+/* harmony default export */ var components_toggleCurrentMenuItem = (toggleCurrentMenuItem);
+;// CONCATENATED MODULE: ./src/js/components/toggleScrollBtnTop.ts
+var toggleScrollBtnTop = function toggleScrollBtnTop() {
+  var scrollToTopBtn = window.document.querySelector('.js-scrollToTopBtn');
+  var actionType = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 ? 'add' : 'remove';
+  if (!scrollToTopBtn) return;
+  scrollToTopBtn.classList[actionType]('active');
+};
+/* harmony default export */ var components_toggleScrollBtnTop = (toggleScrollBtnTop);
+;// CONCATENATED MODULE: ./src/js/frontend.ts
+function frontend_toConsumableArray(arr) { return frontend_arrayWithoutHoles(arr) || frontend_iterableToArray(arr) || frontend_unsupportedIterableToArray(arr) || frontend_nonIterableSpread(); }
+function frontend_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function frontend_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return frontend_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return frontend_arrayLikeToArray(o, minLen); }
+function frontend_iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function frontend_arrayWithoutHoles(arr) { if (Array.isArray(arr)) return frontend_arrayLikeToArray(arr); }
+function frontend_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 
 
 
@@ -1135,12 +1045,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 function ready() {
   var fileInputs = document.querySelectorAll('.wpcf7-file');
-  var popupInstance = new _parts_popup_window__WEBPACK_IMPORTED_MODULE_1__["default"]();
+  var popupInstance = new Popup();
   popupInstance.init();
-  (0,_parts_helpers__WEBPACK_IMPORTED_MODULE_2__.anchorLinkScroll)('.js-l-sidebar-item a', _components_toggleCurrentMenuItem__WEBPACK_IMPORTED_MODULE_3__["default"]);
-  (0,_parts_helpers__WEBPACK_IMPORTED_MODULE_2__.anchorLinkScroll)('.js-anchorLink', _components_toggleCurrentMenuItem__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  anchorLinkScroll('.js-l-sidebar-item a', components_toggleCurrentMenuItem);
+  anchorLinkScroll('.js-anchorLink', components_toggleCurrentMenuItem);
   window.document.addEventListener('scroll', function () {
-    (0,_components_toggleScrollBtnTop__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    components_toggleScrollBtnTop();
   });
   document.body.addEventListener('click', function (event) {
     var target = event.target;
@@ -1152,7 +1062,7 @@ function ready() {
           var parentItem = target.closest('.js-accordion-item');
           var accordionTtems = window.document.querySelectorAll('.js-accordion-item');
           var actionType = parentItem && parentItem.classList.contains('active') ? 'remove' : 'add';
-          accordionTtems && _toConsumableArray(accordionTtems).forEach(function (item) {
+          accordionTtems && frontend_toConsumableArray(accordionTtems).forEach(function (item) {
             item.classList.remove('active');
           });
           parentItem.classList[actionType]('active');
@@ -1207,7 +1117,7 @@ function ready() {
         break;
     }
   });
-  fileInputs && _toConsumableArray(fileInputs).forEach(function (item) {
+  fileInputs && frontend_toConsumableArray(fileInputs).forEach(function (item) {
     item.addEventListener('change', function () {
       var parentInputWrap = item.closest('.js-input-wrapper');
       var fileNameElem = parentInputWrap ? parentInputWrap.querySelector('.js-file-name') : null;
@@ -1225,4 +1135,3 @@ window.document.addEventListener('DOMContentLoaded', ready);
 }();
 /******/ })()
 ;
-//# sourceMappingURL=frontend.js.map
