@@ -26,13 +26,23 @@ $social_repeater = get_field_value($global_options, 'social_repeater');
         ? '<a class="custom-sidebar__logo" href="' . get_home_url() . '"><img src="' . do_shortcode($logo) . '" alt="Logo"></a>'
         : '';
 
-    wp_nav_menu(
-        array(
-            'theme_location' => 'primary_menu',
-            'container' => 'ul',
-            'menu_class' => 'custom-sidebar__menu',
-        )
-    );
+    if (is_singular('recent_projects')) {
+        wp_nav_menu(
+            array(
+                'theme_location' => 'primary_menu_recent_project',
+                'container' => 'ul',
+                'menu_class' => 'custom-sidebar__menu',
+            )
+        );
+    } else {
+        wp_nav_menu(
+            array(
+                'theme_location' => 'primary_menu',
+                'container' => 'ul',
+                'menu_class' => 'custom-sidebar__menu',
+            )
+        );
+    }
 
     if ($social_repeater) { ?>
         <div class="custom-sidebar__social-wrap">

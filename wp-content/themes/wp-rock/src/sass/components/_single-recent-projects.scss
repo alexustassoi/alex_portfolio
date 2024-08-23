@@ -1,5 +1,7 @@
 .single {
     &.single-recent_projects {
+        background-color: #000;
+        
         .custom-sidebar {
             &__right {
                 display: none;
@@ -27,6 +29,16 @@
 
             @include max-break(768px) {
                 width: calc(100% - 230px);
+            }
+        }
+
+        .contact-section {
+            &__pre-title,
+            &__title,
+            &__address,
+            &__contact-item,
+            &__social-link {
+                color: var(--wp--color--sidebar-menu-item);
             }
         }
     }

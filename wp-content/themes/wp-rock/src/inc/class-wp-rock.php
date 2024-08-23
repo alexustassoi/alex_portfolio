@@ -355,6 +355,7 @@ class WP_Rock {
                 'footer_menu' => __( 'Footer Menu', 'wp-rock' ),
                 'footer_menu_bottom' => __( 'Footer Menu Bottom', 'wp-rock' ),
                 'mobile_menu' => __( 'Mobile menu', 'wp-rock' ),
+                'primary_menu_recent_project' => __( 'Primary Menu Recent Project', 'wp-rock' ),
             )
         );
 
