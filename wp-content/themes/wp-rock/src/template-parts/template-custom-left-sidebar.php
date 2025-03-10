@@ -23,7 +23,7 @@ $social_repeater = get_field_value($global_options, 'social_repeater');
     </div>
     <?php
     echo ($logo)
-        ? '<a class="custom-sidebar__logo" href="' . get_home_url() . '"><img src="' . do_shortcode($logo) . '" alt="Logo"></a>'
+        ? '<a class="custom-sidebar__logo" href="' . get_home_url() . '"><img width="190" height="40" src="' . do_shortcode($logo) . '" alt="Logo"></a>'
         : '';
 
     if (is_singular('recent_projects')) {

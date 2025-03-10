@@ -59,28 +59,31 @@ $max_posts_per_page = get_option('posts_per_page')
                                 echo ($tech_stack_info)
                                     ? '<p class="works__tech-stack">' . do_shortcode($tech_stack_info) . '</p>'
                                     : '';
+                                ?>
+                                <div class="works__item-bottom">
+                                    <?php
+                                    echo ($live_preview_link)
+                                        ? '<a href="' . do_shortcode($live_preview_link["url"]) . '" class="works__live-preview-link works__link">' . do_shortcode($live_preview_link["title"]) . '</a>'
+                                        : '';
 
-                                if ($live_preview_link) : ?>
-                                    <div class="works__item-bottom">
-                                        <?php
-                                        echo ($live_preview_link)
-                                            ? '<a href="' . do_shortcode($live_preview_link["url"]) . '" class="works__live-preview-link works__link">' . do_shortcode($live_preview_link["title"]) . '</a>'
-                                            : '';
-
-                                        echo ($view_code_link)
-                                            ? '<a href="' . do_shortcode($view_code_link["url"]) . '" class="works__view-code-link works__link">' . do_shortcode($view_code_link["title"]) . '</a>'
-                                            : '';
-                                        ?>
-                                    </div>
-                                <?php endif; ?>
+                                    echo ($view_code_link)
+                                        ? '<a href="' . do_shortcode($view_code_link["url"]) . '" class="works__view-code-link works__link">' . do_shortcode($view_code_link["title"]) . '</a>'
+                                        : '';
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     <?php endwhile; ?>
                 </div>
                 <?php
-                echo ($load_more_btn)
-                    ? '<div class="works__btn button" data-role="load-more-projects" data-load-step="' . do_shortcode($max_posts_per_page) . '" data-posts-shown="' . do_shortcode($max_posts_per_page) . '">' . do_shortcode($load_more_btn) . '</div>'
-                    : '';
+                if ($load_more_btn) : ?>
+                    <div class="works__btn button"
+                         data-role="load-more-projects"
+                         data-load-step="<?php echo do_shortcode($max_posts_per_page); ?>"
+                         data-posts-shown="<?php echo do_shortcode($max_posts_per_page); ?>">
+                        <?php echo do_shortcode($load_more_btn); ?>
+                    </div>
+                <?php endif;
 
                 wp_reset_postdata();
             endif;

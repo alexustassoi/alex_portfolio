@@ -129,20 +129,18 @@ function load_more_project_posts()
                     echo ($tech_stack_info)
                         ? '<p class="works__tech-stack">' . do_shortcode($tech_stack_info) . '</p>'
                         : '';
+                    ?>
+                    <div class="works__item-bottom">
+                        <?php
+                        echo ($live_preview_link)
+                            ? '<a href="' . do_shortcode($live_preview_link["url"]) . '" class="works__live-preview-link works__link">' . do_shortcode($live_preview_link["title"]) . '</a>'
+                            : '';
 
-                    if ($live_preview_link) : ?>
-                        <div class="works__item-bottom">
-                            <?php
-                            echo ($live_preview_link)
-                                ? '<a href="' . do_shortcode($live_preview_link["url"]) . '" class="works__live-preview-link works__link">' . do_shortcode($live_preview_link["title"]) . '</a>'
-                                : '';
-
-                            echo ($view_code_link)
-                                ? '<a href="' . do_shortcode($view_code_link["url"]) . '" class="works__view-code-link works__link">' . do_shortcode($view_code_link["title"]) . '</a>'
-                                : '';
-                            ?>
-                        </div>
-                    <?php endif; ?>
+                        echo ($view_code_link)
+                            ? '<a href="' . do_shortcode($view_code_link["url"]) . '" class="works__view-code-link works__link">' . do_shortcode($view_code_link["title"]) . '</a>'
+                            : '';
+                        ?>
+                    </div>
                 </div>
             </div>
         <?php endwhile;

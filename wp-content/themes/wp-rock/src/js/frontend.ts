@@ -74,6 +74,7 @@ function ready() {
                 const { loadStep } = target.dataset;
 
                 if (!postShown || !worksItemsElem || !loadStep) return;
+                target.classList.add('is-loading');
 
                 const data = new FormData();
                 data.append('action', 'load-more-projects');
@@ -88,6 +89,7 @@ function ready() {
                     .then((response) => response.json())
                     .then((request) => {
                         if (request.success && request.data) {
+                            target.classList.remove('is-loading');
                             worksItemsElem.insertAdjacentHTML('beforeend', request.data.data);
                             target.dataset.postsShown = String(+postShown + +loadStep);
                         } else {

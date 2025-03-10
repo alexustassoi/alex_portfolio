@@ -15050,6 +15050,7 @@ function ready() {
           var postShown = target.dataset.postsShown;
           var loadStep = target.dataset.loadStep;
           if (!postShown || !worksItemsElem || !loadStep) return;
+          target.classList.add('is-loading');
           var data = new FormData();
           data.append('action', 'load-more-projects');
           data.append('postShown', postShown);
@@ -15062,6 +15063,7 @@ function ready() {
             return response.json();
           }).then(function (request) {
             if (request.success && request.data) {
+              target.classList.remove('is-loading');
               worksItemsElem.insertAdjacentHTML('beforeend', request.data.data);
               target.dataset.postsShown = String(+postShown + +loadStep);
             } else {
