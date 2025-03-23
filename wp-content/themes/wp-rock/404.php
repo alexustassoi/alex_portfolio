@@ -8,19 +8,31 @@
 
 get_header();
 
-do_action( 'wp_rock_before_page_content' );
+global $global_options;
+$img_404      = get_field_value($global_options, '404_img');
+$text_404     = get_field_value($global_options, '404_text');
+$back_home_btn = get_field_value($global_options, '404_btn_text');
+
+do_action('wp_rock_before_page_content');
+
 ?>
+
 <section class="section-404">
-    <div class="content">
-        <div class="subtitles">
-            <span class="subtitleMBold">Oops!</span>
-            
-            <span class="subtitleM">
-                     We can't seem to find the page you're looking for.
-                </span>
-        </div>
-        <a class="button bodySmallBold button-primary" href="<?php echo esc_attr( get_home_url() ); ?>">Back to home</a>
+    <div class="section-404__content">
+        <?php
+        echo ($img_404)
+            ? '<figure class="section-404__main-img-wrap"><img class="section-404__main-img" width="790" height="392" src="' . do_shortcode($img_404) . '" alt="404"></figure>'
+            : '';
+
+        echo ($text_404)
+            ? '<p class="section-404__text">' . do_shortcode($text_404) . '</p>'
+            : '';
+
+        echo ($back_home_btn)
+            ? '<a href="' . get_home_url() . '" class="section-404__back-home-btn">' . do_shortcode($back_home_btn) . '</a>'
+            : '';
+        ?>
     </div>
 </section>
-<?php do_action( 'wp_rock_after_page_content' ); ?>
+<?php do_action('wp_rock_after_page_content'); ?>
 <?php wp_footer(); ?>

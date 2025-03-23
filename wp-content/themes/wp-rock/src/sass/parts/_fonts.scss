@@ -1,6 +1,7 @@
 /* stylelint-disable */
 :root {
     --wp--font-family--title: "IBM Plex Sans", sans-serif;
+    --wp--font-family--404-text: "Crossfit Demo", sans-serif;
 }
 
 @font-face {
@@ -64,6 +65,19 @@
     url('../fonts/IBMPlexSans-Medium.ttf') format('truetype'),
     url('../fonts/IBMPlexSans-Medium.svg#IBMPlexSans-Medium') format('svg');
     font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Crossfit Demo';
+    src: url('../fonts/CrossfitDemo-Bold.eot');
+    src: url('../fonts/CrossfitDemo-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CrossfitDemo-Bold.woff2') format('woff2'),
+    url('../fonts/CrossfitDemo-Bold.woff') format('woff'),
+    url('../fonts/CrossfitDemo-Bold.ttf') format('truetype'),
+    url('../fonts/CrossfitDemo-Bold.svg#CrossfitDemo-Bold') format('svg');
+    font-weight: 900;
     font-style: normal;
     font-display: swap;
 }

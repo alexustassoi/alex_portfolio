@@ -26,7 +26,7 @@ $social_repeater = get_field_value($global_options, 'social_repeater');
         ? '<a class="custom-sidebar__logo" href="' . get_home_url() . '"><img width="190" height="40" src="' . do_shortcode($logo) . '" alt="Logo"></a>'
         : '';
 
-    if (is_singular('recent_projects')) {
+    if (!is_front_page()) {
         wp_nav_menu(
             array(
                 'theme_location' => 'primary_menu_recent_project',
@@ -42,9 +42,27 @@ $social_repeater = get_field_value($global_options, 'social_repeater');
                 'menu_class' => 'custom-sidebar__menu',
             )
         );
-    }
+    } ?>
 
-    if ($social_repeater) { ?>
+    <!-- Language output start -->
+    <div class="custom-sidebar__languages">
+        <?php
+
+        if (function_exists('pll_the_languages')) {
+            echo '<ul class="custom-sidebar__languages-switcher">';
+            pll_the_languages(
+                array(
+                    'show_flags' => 0,
+                    'display_names_as' => 'slug'
+                )
+            );
+            echo '</ul>';
+        }
+        ?>
+    </div>
+    <!-- Language output end -->
+
+    <?php if ($social_repeater) { ?>
         <div class="custom-sidebar__social-wrap">
             <?php foreach ($social_repeater as $item) {
                 $icon       = get_field_value($item, 'icon');

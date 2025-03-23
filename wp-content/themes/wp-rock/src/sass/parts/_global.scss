@@ -37,6 +37,10 @@ body {
 
     &.error404 {
         overflow: hidden;
+
+        .content-wrapper {
+            zoom: 1;
+        }
     }
 
     &.popup-opened,
@@ -73,6 +77,154 @@ body {
         font-family: var(--wp--font-family--title);
         box-sizing: border-box;
         color: var(--wp--color--normal-text);
+    }
+}
+
+%single-content-wrapper {
+    width: calc(100% - 285px);
+    overflow: hidden;
+
+    @include max-break(1750px) {
+        width: calc(100% - 265px);
+    }
+
+    @include max-break(1600px) {
+        width: calc(100% - 250px);
+    }
+
+    @include max-break(1280px) {
+        width: calc(100% - 210px);
+    }
+
+    @include max-break(1030px) {
+        width: calc(100% - 170px);
+    }
+
+    @include max-break(768px) {
+        width: 100vw;
+        zoom: 1;
+    }
+}
+
+%lang-select {
+    .jq-selectbox {
+        position: relative;
+        z-index: 1;
+        border: 1px solid transparent;
+
+        &.opened {
+            border: 1px solid #DEDDDD;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom: unset;
+            background-color: #101010;
+
+            .jq-selectbox__dropdown {
+                border-radius: 0 0 12px 12px;
+                border: 1px solid #DEDDDD;
+                border-top: unset;
+                margin: 0;
+                left: -1px;
+                width: calc(100% + 2px);
+                background-color: #101010;
+            }
+
+            .jq-selectbox__trigger-arrow::after {
+                transform: translate(-50%, -50%) scaleY(-1);
+            }
+        }
+
+        #lang_choice_1 {
+            background-color: transparent;
+            outline: none;
+            border: unset;
+            border: 1px solid transparent;
+            width: 100%;
+        }
+
+        &__trigger,
+        &__select {
+            border: unset;
+        }
+
+        &__select {
+            display: flex;
+            align-items: center;
+            color: unset;
+            font: unset;
+            height: unset;
+            padding: 8px 28px 8px 8px;
+            text-shadow: unset;
+            position: relative;
+            z-index: 1;
+        }
+
+        &__trigger {
+            height: 24px;
+            width: 24px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &__trigger-arrow {
+            border-left: unset;
+            border-right: unset;
+            border-top: unset;
+            position: absolute;
+            z-index: 1;
+            height: 24px;
+            width: 24px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 12px;
+                height: 6px;
+                z-index: 1;
+                background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMUw3IDdMMTMgMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+) center center no-repeat;
+                background-size: contain;
+            }
+        }
+
+        &__select-text {
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        &__dropdown {
+            border: 1px solid transparent;
+            width: 100%;
+            padding-bottom: 8px;
+
+            ul {
+                li {
+                    color: #FFFEFF;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1;
+                    padding: 6px 8px;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        background: #1ED6FF;
+                        color: #10130B;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -394,3 +546,5 @@ ol {
         }
     }
 }
+
+

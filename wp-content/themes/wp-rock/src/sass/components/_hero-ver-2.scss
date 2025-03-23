@@ -70,8 +70,12 @@
             background: linear-gradient(100deg, #000 17.54%, rgba(0, 0, 0, 0.99) 20.98%, rgba(0, 0, 0, 0.96) 24.42%, rgba(0, 0, 0, 0.92) 27.86%, rgba(0, 0, 0, 0.85) 31.3%, rgba(0, 0, 0, 0.77) 34.74%, rgba(0, 0, 0, 0.67) 38.18%, rgba(0, 0, 0, 0.56) 41.61%, rgba(0, 0, 0, 0.44) 45.05%, rgba(0, 0, 0, 0.33) 48.49%, rgba(0, 0, 0, 0.23) 51.93%, rgba(0, 0, 0, 0.15) 55.37%, rgba(0, 0, 0, 0.08) 58.81%, rgba(0, 0, 0, 0.04) 62.25%, rgba(0, 0, 0, 0.01) 65.69%, rgba(0, 0, 0, 0.00) 69.13%);
 
             @include max-break(1650px) {
-                left: 60%;
+                left: 50%;
                 opacity: 0.85;
+            }
+
+            @include max-break(1540px) {
+                left: 45%;
             }
 
             @include max-break(480px) {
@@ -111,8 +115,21 @@
             zoom: .7;
         }
 
+        @include max-break(1199px) {
+            zoom: .78;
+        }
+
         @include max-break(1030px) {
+            zoom: 0.9;
             left: -42px;
+        }
+
+        @include max-break(991px) {
+            zoom: 1.05;
+        }
+
+        @include max-break(991px) {
+            zoom: 1;
         }
 
         @include max-break(768px) {

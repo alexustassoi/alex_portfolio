@@ -46,6 +46,7 @@ $max_posts_per_page = get_option('posts_per_page')
                         $view_code_link    = get_post_meta($post_ID, 'view_code_link', true);
                         ?>
                         <div class="works__item" data-postID="<?php echo do_shortcode($post_ID); ?>">
+                            <a class="works__item-link" href="<?php echo get_permalink(); ?>"></a>
                             <figure class="works__figure">
                                 <?php the_post_thumbnail('full'); ?>
                             </figure>
