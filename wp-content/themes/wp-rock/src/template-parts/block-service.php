@@ -6,15 +6,17 @@
  * @since   4.4.0
  */
 
-$fields         = get_fields();
+$fields     = get_fields();
+$hide_block = get_field_value($fields, 'hide_block');
+
+if ($hide_block) return;
 $title          = get_field_value($fields, 'title');
 $pre_title_text = get_field_value($fields, 'pretitle_text');
 $item_repeater  = get_field_value($fields, 'item_repeater');
-$is_visible     = get_field_value($fields, 'is_visible');
 
 ?>
 
-<section id="services" class="service <?php echo (!$is_visible) ? 'not_visible' : ''; ?>">
+<section id="services" class="service">
     <div class="service__content-wrap container-inner">
         <?php
         echo ($pre_title_text)

@@ -7,10 +7,13 @@
  */
 
 global $global_options;
+$fields     = get_fields();
+$hide_block = get_field_value($fields, 'hide_block');
+
+if ($hide_block) return;
 
 $full_name = get_field_value($global_options, 'full_name');
 
-$fields              = get_fields();
 $title               = get_field_value($fields, 'title');
 $pre_title_text      = get_field_value($fields, 'pretitle_text');
 $description         = get_field_value($fields, 'description');
@@ -54,13 +57,13 @@ $experience_repeater = get_field_value($fields, 'experience_repeater');
                         <div class="experience__item">
                             <div class="experience__item-info">
                                 <?php
-                                    echo ($working_period)
-                                        ? '<span class="experience__working-period">' . do_shortcode($working_period) . '</span>'
-                                        : '';
+                                echo ($working_period)
+                                    ? '<span class="experience__working-period">' . do_shortcode($working_period) . '</span>'
+                                    : '';
 
-                                    echo ($working_location)
-                                        ? '<span class="experience__working-location">' . do_shortcode($working_location) . '</span>'
-                                        : '';
+                                echo ($working_location)
+                                    ? '<span class="experience__working-location">' . do_shortcode($working_location) . '</span>'
+                                    : '';
                                 ?>
                             </div>
                             <?php

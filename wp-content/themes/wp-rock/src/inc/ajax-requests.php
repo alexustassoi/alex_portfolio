@@ -99,7 +99,7 @@ function load_more_project_posts()
         'posts_per_page' => $loadStep,
         'post_status' => 'publish',
         'offset' => $postShown,
-        'order' => 'ASC',
+        'order' => 'DESC',
     );
 
     $recent_projects_query = new WP_Query($args);
@@ -114,35 +114,16 @@ function load_more_project_posts()
             $tech_stack_info   = get_post_meta($post_ID, 'tech_stack_info', true);
             $live_preview_link = get_post_meta($post_ID, 'live_preview_link', true);
             $view_code_link    = get_post_meta($post_ID, 'view_code_link', true);
+
+            $args = array(
+                'post_id' => $post_ID,
+                'tech_stack_info' => $tech_stack_info,
+                'live_preview_link' => $live_preview_link,
+                'view_code_link' => $view_code_link,
+            );
+
+            include(locate_template('src/template-parts/template-work-item.php', false, false, $args));
             ?>
-            <div class="works__item" data-postID="<?php echo do_shortcode($post_ID); ?>">
-                <figure class="works__figure">
-                    <?php the_post_thumbnail('full'); ?>
-                </figure>
-                <div class="works__item-content">
-                    <div class="works__item-title"><?php the_title(); ?></div>
-                    <?php
-                    echo (has_excerpt())
-                        ? '<p class="works__excerpt">' . do_shortcode(get_the_excerpt()) . '</p>'
-                        : '';
-
-                    echo ($tech_stack_info)
-                        ? '<p class="works__tech-stack">' . do_shortcode($tech_stack_info) . '</p>'
-                        : '';
-                    ?>
-                    <div class="works__item-bottom">
-                        <?php
-                        echo ($live_preview_link)
-                            ? '<a href="' . do_shortcode($live_preview_link["url"]) . '" class="works__live-preview-link works__link">' . do_shortcode($live_preview_link["title"]) . '</a>'
-                            : '';
-
-                        echo ($view_code_link)
-                            ? '<a href="' . do_shortcode($view_code_link["url"]) . '" class="works__view-code-link works__link">' . do_shortcode($view_code_link["title"]) . '</a>'
-                            : '';
-                        ?>
-                    </div>
-                </div>
-            </div>
         <?php endwhile;
     endif;
     $data = ob_get_clean();

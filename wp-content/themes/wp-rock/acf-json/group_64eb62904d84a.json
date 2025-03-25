@@ -3,6 +3,27 @@
     "title": "Block - Hero",
     "fields": [
         {
+            "key": "field_67e2f1d2c0f6d",
+            "label": "Hide block",
+            "name": "hide_block",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "translations": "copy_once",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_64eb6290e61f7",
             "label": "Block title",
             "name": "block_title",
@@ -106,5 +127,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696254792
+    "modified": 1742926330
 }

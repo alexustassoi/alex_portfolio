@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_651bfc407a9d5",
-            "label": "Is the section visible?",
-            "name": "is_visible",
+            "label": "Hide block",
+            "name": "hide_block",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
@@ -152,5 +152,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696332917
+    "modified": 1742926467
 }

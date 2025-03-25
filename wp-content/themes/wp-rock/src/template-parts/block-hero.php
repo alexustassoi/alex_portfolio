@@ -7,11 +7,14 @@
  */
 
 global $global_options;
+$fields     = get_fields();
+$hide_block = get_field_value($fields, 'hide_block');
+
+if ($hide_block) return;
 
 $phone = get_field_value($global_options, 'phone');
 $email = get_field_value($global_options, 'email');
 
-$fields                  = get_fields();
 $block_title             = get_field_value($fields, 'block_title');
 $sub_title               = get_field_value($fields, 'sub_title');
 $job_status_and_location = get_field_value($fields, 'job_status_and_location');
@@ -53,7 +56,7 @@ $owner_photo             = get_field_value($fields, 'owner_photo');
                 ?>
             </div>
         </div>
-        <figure class="hero__user-wrap" >
+        <figure class="hero__user-wrap">
             <?php
             echo ($owner_photo)
                 ? ' <img width="530" height="692" class="hero__user-img" src="' . do_shortcode($owner_photo) . '" alt="User">'

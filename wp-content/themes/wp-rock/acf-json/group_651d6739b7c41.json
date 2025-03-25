@@ -3,6 +3,27 @@
     "title": "Block - Recent project",
     "fields": [
         {
+            "key": "field_67e2f20227be4",
+            "label": "Hide block",
+            "name": "hide_block",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "translations": "copy_once",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_651d673a89c4e",
             "label": "Pretitle text",
             "name": "pretitle_text",
@@ -84,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696431915
+    "modified": 1742926380
 }

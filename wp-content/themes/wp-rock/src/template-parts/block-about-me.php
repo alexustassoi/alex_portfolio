@@ -7,6 +7,10 @@
  */
 
 global $global_options;
+$fields     = get_fields();
+$hide_block = get_field_value($fields, 'hide_block');
+
+if ($hide_block) return;
 
 $full_name = get_field_value($global_options, 'full_name');
 $phone     = get_field_value($global_options, 'phone');
@@ -14,7 +18,7 @@ $email     = get_field_value($global_options, 'email');
 $age       = get_field_value($global_options, 'age');
 $location  = get_field_value($global_options, 'location');
 
-$fields                  = get_fields();
+
 $title                   = get_field_value($fields, 'title');
 $pre_title_text          = get_field_value($fields, 'pretitle_text');
 $owner_photo             = get_field_value($fields, 'owner_photo');
