@@ -54,7 +54,7 @@ class WP_Rock_Blocks {
             'post_types' => array( 'post', 'page' ),
         ),
         'recent-project' => array(
-            'title' => ' Recent project Block',
+            'title' => 'Recent project Block',
             'description' => '',
             'template' => 'src/template-parts/block-recent-project.php',
             'post_types' => array( 'post', 'page' ),

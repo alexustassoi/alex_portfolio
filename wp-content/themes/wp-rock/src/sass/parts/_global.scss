@@ -2,6 +2,7 @@
     --wp--color--normal-text: #141313;
     --wp--color--grey-text: #666;
     --wp--color--grey-v2-text: #42446E;
+    --wp--color--black: #000;
     --wp--color--white: #FFF;
     --wp--gradient--orange-to-lilac: linear-gradient(273deg, #FFB147 0%, #FF6C63 52.03%, #B86ADF 100%);
     --wp--gradient--experience-bg: linear-gradient(270deg, #FFB147 5.74%, #FF6C63 50.64%, #B86ADF 92.05%);
@@ -251,6 +252,10 @@ body {
 
     @include max-break(480px) {
         font-size: 14px;
+        text-align: center;
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

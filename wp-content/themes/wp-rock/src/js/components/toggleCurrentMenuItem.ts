@@ -1,4 +1,4 @@
-import toggleBurgerMenu from "./toggleBurgerMenu";
+import toggleBurgerMenu from './toggleBurgerMenu';
 
 const toggleCurrentMenuItem = (targetElem = null) => {
     if (!targetElem) {

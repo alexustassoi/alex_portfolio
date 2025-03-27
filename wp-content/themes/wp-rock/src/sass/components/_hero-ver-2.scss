@@ -48,8 +48,12 @@
             padding-top: 200px;
         }
 
+        @include max-break(375px) {
+            padding-bottom: 390px;
+        }
+
         @include max-break(320px) {
-            padding-bottom: 380px;
+            padding-bottom: 300px;
         }
 
         &:before,
@@ -95,6 +99,7 @@
 
             @include max-break(480px) {
                 height: 50px;
+                bottom: -1px;
             }
         }
     }
@@ -129,7 +134,7 @@
         }
 
         @include max-break(991px) {
-            zoom: 1;
+            zoom: 1.05;
         }
 
         @include max-break(768px) {
@@ -143,6 +148,11 @@
         @include max-break(480px) {
             left: 0;
             gap: 10px;
+            zoom: .88;
+        }
+
+        @include max-break(415px) {
+            zoom: 1;
         }
     }
 

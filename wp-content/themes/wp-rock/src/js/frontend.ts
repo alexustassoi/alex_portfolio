@@ -9,9 +9,11 @@ import '../sass/frontend.scss';
 import Popup from './parts/popup-window';
 import {anchorLinkScroll} from './parts/helpers';
 import SlickSliders from "./components/slick-init";
+import SwiperSliders from "./components/swiper-init";
 import toggleCurrentMenuItem from './components/toggleCurrentMenuItem';
 import toggleScrollBtnTop from "./components/toggleScrollBtnTop";
 import toggleBurgerMenu from "./components/toggleBurgerMenu";
+import toggleProjectControlsBtn from "./components/toggleProjectControlsBtn";
 
 function ready() {
     const fileInputs = document.querySelectorAll('.wpcf7-file') as NodeList;
@@ -25,6 +27,8 @@ function ready() {
     // Init Slick Sliders.
     // @ts-ignore
     SlickSliders.initSlickSliders(var_from_php);
+    // @ts-ignore
+    SwiperSliders.initSwipers(var_from_php);
 
     /**
      * Add handler for scroll event.
@@ -104,6 +108,11 @@ function ready() {
             case 'toggle-burger-menu': {
                 toggleBurgerMenu();
 
+                break;
+            }
+
+            case 'toggle-project-controls-btn': {
+                toggleProjectControlsBtn(target);
                 break;
             }
 

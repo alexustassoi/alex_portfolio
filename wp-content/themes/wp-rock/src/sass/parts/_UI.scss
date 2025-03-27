@@ -133,7 +133,7 @@ h3 {
     @extend %heading;
     font-size: 40px;
 
-    @include min-break('1024px') {
+    @include max-break(1024px) {
         //font-size: 70px;
     }
 }
@@ -182,11 +182,11 @@ h5 {
     @extend %heading;
     font-size: 24px;
 
-    @include min-break(570px) {
+    @include max-break(570px) {
         font-size: 20px;
     }
 
-    @include min-break(480px) {
+    @include max-break(480px) {
         font-size: 16px;
     }
 }
@@ -195,13 +195,17 @@ h6 {
     @extend %heading;
     font-size: 20px;
 
-    @include min-break(480) {
+    @include max-break(480px) {
         font-size: 16px;
     }
 }
 
 .section-title {
     text-transform: uppercase;
+
+    @include max-break(480px) {
+        text-align: center;
+    }
 }
 
 p {

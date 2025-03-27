@@ -30,10 +30,12 @@ if (have_posts()) :
     while (have_posts()) :
         the_post();
         $post_ID           = get_the_ID();
-        $project_content   = get_post_meta($post_ID, 'project_content', true);
-        $tech_stack_info   = get_post_meta($post_ID, 'tech_stack_info', true);
-        $live_preview_link = get_post_meta($post_ID, 'live_preview_link', true);
-        $view_code_link    = get_post_meta($post_ID, 'view_code_link', true);
+        $post_fields       = get_fields($post_ID);
+        $project_content   = get_field_value($post_fields, 'project_content');
+        $tech_stack_info   = get_field_value($post_fields, 'tech_stack_info');
+        $live_preview_link = get_field_value($post_fields, 'live_preview_link');
+        $view_code_link    = get_field_value($post_fields, 'view_code_link');
+        $project_gallery   = get_field_value($post_fields, 'project_gallery');
         ?>
         <section class="hero-ver-2">
             <div class="hero-ver-2__inner">
@@ -136,33 +138,68 @@ if (have_posts()) :
             </div>
         </section>
 
+        <section class="project-gallery">
+            <div class="container project-gallery__container container-inner">
+                <div class="project-gallery__slider-wrap">
+                    <div class="project-gallery__slider swiper js-project-gallery-slider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <?php
+                            if (!empty($project_gallery) && is_array($project_gallery)):
+                                foreach ($project_gallery as $slide_img): ?>
+                                    <div class="swiper-slide project-gallery__slide">
+                                        <img class="project-gallery__slide-img"
+                                             src="<?php echo do_shortcode($slide_img); ?>"
+                                             alt="Project"/>
+                                    </div>
+                                <?php endforeach;
+                            endif;
+                            ?>
+                        </div>
 
-        <!--                <div class="project__title">--><?php //the_title();
-        ?><!--</div>-->
-        <!--                --><?php
-//                echo ($project_content)
-//                    ? '<div class="project__content">' . do_shortcode($project_content) . '</div>'
-//                    : '';
-//
-//                echo ($tech_stack_info)
-//                    ? '<div class="project__tech-stack">' . do_shortcode($tech_stack_info) . '</div>'
-//                    : '';
-//
-//                if($live_preview_link) :
-        ?>
-        <!--                    <div class="project__item-bottom">-->
-        <!--                        --><?php
-//                        echo ($live_preview_link)
-//                            ? '<a href="' . do_shortcode($live_preview_link["url"]) . '" class="project__live-preview-link">' . do_shortcode($live_preview_link["title"]) . '</a>'
-//                            : '';
-//
-//                        echo ($view_code_link)
-//                            ? '<a href="' . do_shortcode($view_code_link["url"]) . '" class="project__view-code-link">' . do_shortcode($view_code_link["title"]) . '</a>'
-//                            : '';
-//
-        ?>
-        <!--                    </div>-->
-        <!--                --><?php //endif;
+                        <div class="project-gallery__swiper-controls js-project-gallery-controls">
+                            <div class="project-gallery__controls-top">
+                                <div class="project-gallery__read-more-btn project-gallery__controls-btn js-project-controls-btn project-read-more-btn" data-role="toggle-project-controls-btn">
+                                    <span class="project-gallery__btn-label">
+                                        <?php pll_e("Read more"); ?>
+                                    </span>
+                                </div>
+                                <div class="project-gallery__read-more-btn project-gallery__controls-btn js-project-controls-btn" data-role="toggle-project-controls-btn">
+                                    <span class="project-gallery__btn-label">
+                                        <?php pll_e("Read more"); ?>
+                                    </span>
+                                </div>
+                                <div class="project-gallery__read-more-btn project-gallery__controls-btn js-project-controls-btn" data-role="toggle-project-controls-btn">
+                                    <span class="project-gallery__btn-label">
+                                        <?php pll_e("Read more"); ?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="project-gallery__controls-bottom">
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+
+                                <div class="project-gallery__swiper-buttons">
+                                    <!-- If we need navigation buttons -->
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-gallery__project-info">
+                            <div class="project-gallery__project-title">
+                                <?php echo the_title(); ?>
+                            </div>
+                            <div class="project-gallery__project-content">
+                                <p>The snow leopard's fur is whitish to grey with black spots on head and neck, with larger rosettes on the back, flanks and bushy tail. The belly is whitish. Its eyes are pale green or grey in color. Its muzzle is short and its forehead domed. Its nasal cavities are large. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <?php
     endwhile;
 endif;
 
