@@ -544,6 +544,48 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_67ea7eb0e865b",
+            "label": "Project gallery pretitle text",
+            "name": "project_gallery_pretitle_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "translations": "translate",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67ea7ed3e865c",
+            "label": "Project gallery title",
+            "name": "project_gallery_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "translations": "translate",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_66c85c96288da",
             "label": "Contact pretitle text",
             "name": "contact_pretitle_text",
@@ -796,5 +838,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742729872
+    "modified": 1743421170
 }

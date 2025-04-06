@@ -33,6 +33,13 @@
     &__content-wrap {
     }
 
+    &__pre-title,
+    &__title {
+        @include max-break(570px) {
+            text-align: center;
+        }
+    }
+
     &__pre-title {
 
     }

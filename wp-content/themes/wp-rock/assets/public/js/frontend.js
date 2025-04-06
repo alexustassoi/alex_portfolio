@@ -60,14 +60,36 @@ var SlickSliders = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
+var projectGallerySlider;
+function getNavigationElements() {
+  if (window.innerWidth <= 570) {
+    return {
+      paginationEl: '.swiper-pagination-mobile',
+      nextEl: '.swiper-button-next-mobile',
+      prevEl: '.swiper-button-prev-mobile'
+    };
+  }
+  return {
+    paginationEl: '.swiper-pagination-desktop',
+    nextEl: '.swiper-button-next-desktop',
+    prevEl: '.swiper-button-prev-desktop'
+  };
+}
 function initSwipers() {
-  var projectGallerySlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-project-gallery-slider', {
+  var gallerySliderElement = document.querySelector('.js-project-gallery-slider');
+  if (!gallerySliderElement) return;
+  if (projectGallerySlider instanceof swiper__WEBPACK_IMPORTED_MODULE_0__["default"]) {
+    projectGallerySlider.destroy(true, true);
+    projectGallerySlider = null;
+  }
+  var navigationElements = getNavigationElements();
+  projectGallerySlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-project-gallery-slider', {
     modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
     slidesPerView: 1,
     loop: true,
     speed: 800,
     pagination: {
-      el: '.swiper-pagination',
+      el: navigationElements.paginationEl,
       type: 'fraction',
       formatFractionCurrent: function formatFractionCurrent(number) {
         return number.toString().padStart(2, '0');
@@ -77,12 +99,15 @@ function initSwipers() {
       }
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      nextEl: navigationElements.nextEl,
+      prevEl: navigationElements.prevEl
     },
-    allowTouchMove: false
+    allowTouchMove: true
   });
 }
+window.addEventListener('resize', function () {
+  initSwipers();
+});
 var SwiperSliders = {
   initSwipers: initSwipers
 };
@@ -27962,7 +27987,7 @@ function ready() {
   (0,_parts_helpers__WEBPACK_IMPORTED_MODULE_2__.anchorLinkScroll)('.js-l-sidebar-item a', _components_toggleCurrentMenuItem__WEBPACK_IMPORTED_MODULE_5__["default"]);
   (0,_parts_helpers__WEBPACK_IMPORTED_MODULE_2__.anchorLinkScroll)('.js-anchorLink', _components_toggleCurrentMenuItem__WEBPACK_IMPORTED_MODULE_5__["default"]);
   _components_slick_init__WEBPACK_IMPORTED_MODULE_3__["default"].initSlickSliders(var_from_php);
-  _components_swiper_init__WEBPACK_IMPORTED_MODULE_4__["default"].initSwipers(var_from_php);
+  _components_swiper_init__WEBPACK_IMPORTED_MODULE_4__["default"].initSwipers();
   window.document.addEventListener('scroll', function () {
     (0,_components_toggleScrollBtnTop__WEBPACK_IMPORTED_MODULE_6__["default"])();
   });

@@ -33,9 +33,11 @@ $max_posts_per_page = get_option('posts_per_page')
 
             $args = array(
                 'post_type' => 'recent_projects',
-                'posts_per_page' => 3,
+                'posts_per_page' => $max_posts_per_page,
                 'post_status' => 'publish',
-                'order' => 'DESC',
+                'order' => 'ASC',
+                'orderby' => 'title',
+                'lang' => pll_current_language(),
             );
 
             $recent_project_query = new WP_Query($args);

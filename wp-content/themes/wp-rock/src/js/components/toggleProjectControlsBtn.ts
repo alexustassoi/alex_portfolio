@@ -7,7 +7,9 @@
  * @param {HTMLElement} target - The element that was clicked to trigger this function.
  */
 const toggleProjectControlsBtn = (target: HTMLElement) => {
-    const projectControlsBtnArr = window.document.querySelectorAll('.js-project-controls-btn') as NodeListOf<HTMLElement>;
+    const projectControlsBtnArr = window.document.querySelectorAll(
+        '.js-project-controls-btn'
+    ) as NodeListOf<HTMLElement>;
     const projectGalleryControls = window.document.querySelector('.js-project-gallery-controls') as HTMLElement;
 
     if (!projectControlsBtnArr || !projectGalleryControls) return;

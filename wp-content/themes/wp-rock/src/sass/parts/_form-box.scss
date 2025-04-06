@@ -61,7 +61,7 @@
     &__textarea {
         width: 100%;
         height: 44px;
-        padding: 8px 16px;
+        padding: 8px 10px;
         border-radius: 0;
         border: none;
         border-bottom: 1px solid var(--wp--color--white);
@@ -74,21 +74,6 @@
         font-style: normal;
         font-weight: 500;
         line-height: 1.5;
-
-        @include max-break(1750px) {
-            padding-left: 35px;
-            padding-right: 35px;
-        }
-
-        @include max-break(1650px) {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        @include max-break(1199px) {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
 
         @include max-break(480px) {
             font-size: 14px;
@@ -196,7 +181,7 @@
         position: relative;
         z-index: 1;
 
-        @include min-break(480px) {
+        @include max-break(570px) {
             margin-left: auto;
             margin-right: auto;
         }
@@ -215,7 +200,7 @@
             background-size: contain;
             pointer-events: none;
 
-            @include min-break(480px) {
+            @include max-break(570px) {
                 right: 30px;
             }
         }
@@ -229,7 +214,7 @@
         }
 
         .wpcf7-spinner {
-            @include min-break(480px) {
+            @include max-break(570px) {
                 right: -64px;
                 position: absolute;
                 z-index: 1;
@@ -275,6 +260,7 @@ body {
     .wpcf7-not-valid-tip {
         margin-top: 5px;
         color: rgba(255, 0, 0, 1);
+        font-size: 14px;
 
         @include max-break(991px) {
             font-size: 12px;

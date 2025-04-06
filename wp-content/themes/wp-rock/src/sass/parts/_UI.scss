@@ -119,12 +119,12 @@ h2 {
     }
 
     @include max-break(480px) {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     &.contact-section__title {
         @include max-break(480px) {
-            margin-bottom: 24px;
+            margin-bottom: 25px;
         }
     }
 }

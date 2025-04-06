@@ -84,6 +84,13 @@
         color: var(--wp--color--white);
     }
 
+    &__pre-title,
+    &__title {
+        @include max-break(570px) {
+            text-align: center;
+        }
+    }
+
     &__title {
         margin-bottom: 24px;
 

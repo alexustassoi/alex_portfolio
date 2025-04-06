@@ -28,7 +28,7 @@ function ready() {
     // @ts-ignore
     SlickSliders.initSlickSliders(var_from_php);
     // @ts-ignore
-    SwiperSliders.initSwipers(var_from_php);
+    SwiperSliders.initSwipers();
 
     /**
      * Add handler for scroll event.

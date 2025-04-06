@@ -99,7 +99,9 @@ function load_more_project_posts()
         'posts_per_page' => $loadStep,
         'post_status' => 'publish',
         'offset' => $postShown,
-        'order' => 'DESC',
+        'order' => 'ASC',
+        'orderby' => 'title',
+        'lang' => pll_current_language(),
     );
 
     $recent_projects_query = new WP_Query($args);

@@ -16,6 +16,7 @@
     }
 
     @include max-break(768px) {
+        padding-top: 50px;
         padding-bottom: 50px;
     }
 
@@ -41,10 +42,21 @@
     &__left-content {
         width: 100%;
         max-width: 430px;
+
+        @include max-break(570px) {
+            max-width: unset;
+        }
     }
 
     &__right-content {
         width: 100%;
+    }
+
+    &__pre-title,
+    &__title {
+        @include max-break(570px) {
+            text-align: center;
+        }
     }
 
     &__title {

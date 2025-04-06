@@ -21,6 +21,8 @@ $contact_title           = get_field_value($global_options, 'contact_block_title
 $contact_address         = get_field_value($global_options, 'contact_address');
 $contact_social_repeater = get_field_value($global_options, 'contact_social_repeater');
 $contact_shortcode_form  = get_field_value($global_options, 'contact_shortcode_form');
+$gallery_pretitle_text   = get_field_value($global_options, 'project_gallery_pretitle_text');
+$gallery_title           = get_field_value($global_options, 'project_gallery_title');
 
 get_header();
 
@@ -128,10 +130,6 @@ if (have_posts()) :
                         echo ($post_title)
                             ? '<h1 class="hero-ver-2__title">' . do_shortcode($post_title) . '</h1>'
                             : '';
-
-                        //                                echo ( $desc )
-                        //                                    ? '<div class="hero-ver-2__desc">' . do_shortcode( $desc ) . '</div>'
-                        //                                    : '';
                         ?>
                     </div>
                 </div>
@@ -140,6 +138,15 @@ if (have_posts()) :
 
         <section class="project-gallery">
             <div class="container project-gallery__container container-inner">
+                <?php
+                echo ($gallery_pretitle_text)
+                    ? '<p class="project-gallery__pre-title pre-title">' . do_shortcode($gallery_pretitle_text) . '</p>'
+                    : '';
+
+                echo ($gallery_title)
+                    ? '<h2 class="project-gallery__title section-title">' . do_shortcode($gallery_title) . '</h2>'
+                    : '';
+                ?>
                 <div class="project-gallery__slider-wrap">
                     <div class="project-gallery__slider swiper js-project-gallery-slider">
                         <!-- Additional required wrapper -->
@@ -158,45 +165,59 @@ if (have_posts()) :
                             ?>
                         </div>
 
-                        <div class="project-gallery__swiper-controls js-project-gallery-controls">
+                        <div class="project-gallery__swiper-controls js-project-gallery-controls desktop">
                             <div class="project-gallery__controls-top">
-                                <div class="project-gallery__read-more-btn project-gallery__controls-btn js-project-controls-btn project-read-more-btn" data-role="toggle-project-controls-btn">
+                                <div
+                                    class="project-gallery__read-more-btn project-gallery__controls-btn js-project-controls-btn project-read-more-btn"
+                                    data-role="toggle-project-controls-btn">
                                     <span class="project-gallery__btn-label">
-                                        <?php pll_e("Read more"); ?>
-                                    </span>
-                                </div>
-                                <div class="project-gallery__read-more-btn project-gallery__controls-btn js-project-controls-btn" data-role="toggle-project-controls-btn">
-                                    <span class="project-gallery__btn-label">
-                                        <?php pll_e("Read more"); ?>
-                                    </span>
-                                </div>
-                                <div class="project-gallery__read-more-btn project-gallery__controls-btn js-project-controls-btn" data-role="toggle-project-controls-btn">
-                                    <span class="project-gallery__btn-label">
-                                        <?php pll_e("Read more"); ?>
+                                        <span class="project-gallery__btn-text-init"><?php pll_e("Read more"); ?></span>
+                                        <span
+                                            class="project-gallery__btn-text-active"><?php pll_e("Read less"); ?></span>
                                     </span>
                                 </div>
                             </div>
                             <div class="project-gallery__controls-bottom">
                                 <!-- If we need pagination -->
-                                <div class="swiper-pagination"></div>
+                                <div class="swiper-pagination-desktop"></div>
 
                                 <div class="project-gallery__swiper-buttons">
                                     <!-- If we need navigation buttons -->
-                                    <div class="swiper-button-prev"></div>
-                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev-desktop"></div>
+                                    <div class="swiper-button-next-desktop"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="project-gallery__project-info">
-                            <div class="project-gallery__project-title">
-                                <?php echo the_title(); ?>
-                            </div>
-                            <div class="project-gallery__project-content">
-                                <p>The snow leopard's fur is whitish to grey with black spots on head and neck, with larger rosettes on the back, flanks and bushy tail. The belly is whitish. Its eyes are pale green or grey in color. Its muzzle is short and its forehead domed. Its nasal cavities are large. </p>
+                        <?php
+                        $args = [
+                            'custom_class' => 'desktop'
+                        ];
+
+                        include(locate_template('src/template-parts/template-project-gallery-info.php', false, false, $args));
+                        ?>
+                    </div>
+                    <div class="project-gallery__swiper-controls js-project-gallery-controls mobile">
+                        <div class="project-gallery__controls-bottom">
+                            <div class="project-gallery__swiper-buttons">
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev-mobile"></div>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination-mobile"></div>
+                                <div class="swiper-button-next-mobile"></div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="project-gallery__mob-info container-inner">
+                <?php
+                $args = [
+                    'custom_class' => 'mobile'
+                ];
+
+                include(locate_template('src/template-parts/template-project-gallery-info.php', false, false, $args));
+                ?>
             </div>
         </section>
     <?php
