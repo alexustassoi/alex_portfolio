@@ -5,14 +5,26 @@
  * @package WP-rock
  */
 
-$custom_class = get_field_value($args, 'custom_class'); ?>
+$custom_class      = get_field_value($args, 'custom_class');
+$project_content   = get_field_value($args, 'project_content');
+$tech_stack_info   = get_field_value($args, 'tech_stack_info');
+$live_preview_link = get_field_value($args, 'live_preview_link');
+$view_code_link    = get_field_value($args, 'view_code_link');
+
+?>
 
 <div class="project-gallery__info <?php echo $custom_class ? do_shortcode($custom_class) : ''; ?>">
     <div class="project-gallery__project-title">
         <?php echo the_title(); ?>
     </div>
     <div class="project-gallery__project-content">
-        <p>The snow leopard's fur is whitish to grey with black spots on head and neck, with larger rosettes on the back, flanks and bushy tail. The belly is whitish. Its eyes are pale green or grey in color. Its muzzle is short and its forehead domed. Its nasal cavities are large. </p>
+        <div class="project-gallery__project-content-inner">
+            <?php
+            echo $project_content
+                ? do_shortcode($project_content)
+                : '';
+            ?>
+        </div>
         <?php
         echo $tech_stack_info
             ? '<div class="project-gallery__tech-stack-info">' . do_shortcode($tech_stack_info) . '</div>'

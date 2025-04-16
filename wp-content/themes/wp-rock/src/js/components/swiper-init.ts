@@ -23,12 +23,19 @@ function initSwipers() {
     if (!gallerySliderElement) return;
 
     // Destroy the previous copy of Swiper (if already it is)
+    console.log('projectGallerySlider', projectGallerySlider);
     if (projectGallerySlider instanceof Swiper) {
         projectGallerySlider.destroy(true, true);
         projectGallerySlider = null;  // Reset the variable so as not to refer to the destroyed object
     }
 
     const navigationElements = getNavigationElements();
+    const prev = document.querySelector(navigationElements.prevEl);
+    const next = document.querySelector(navigationElements.nextEl);
+    const paginationEl = document.querySelector(navigationElements.paginationEl);
+    console.log('prev', prev);
+    console.log('next', next);
+    console.log('paginationEl', paginationEl);
 
     projectGallerySlider = new Swiper('.js-project-gallery-slider', {
         modules: [Navigation, Pagination],
@@ -51,9 +58,11 @@ function initSwipers() {
         },
         allowTouchMove: true,
     });
+
+    console.log('projectGallerySlider_after', projectGallerySlider);
 }
 
-// Restart the SWiper when the screen size changes
+// Restart the Swiper when the screen size changes
 window.addEventListener('resize', () => {
     initSwipers();
 });

@@ -78,11 +78,18 @@ function getNavigationElements() {
 function initSwipers() {
   var gallerySliderElement = document.querySelector('.js-project-gallery-slider');
   if (!gallerySliderElement) return;
+  console.log('projectGallerySlider', projectGallerySlider);
   if (projectGallerySlider instanceof swiper__WEBPACK_IMPORTED_MODULE_0__["default"]) {
     projectGallerySlider.destroy(true, true);
     projectGallerySlider = null;
   }
   var navigationElements = getNavigationElements();
+  var prev = document.querySelector(navigationElements.prevEl);
+  var next = document.querySelector(navigationElements.nextEl);
+  var paginationEl = document.querySelector(navigationElements.paginationEl);
+  console.log('prev', prev);
+  console.log('next', next);
+  console.log('paginationEl', paginationEl);
   projectGallerySlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-project-gallery-slider', {
     modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
     slidesPerView: 1,
@@ -104,6 +111,7 @@ function initSwipers() {
     },
     allowTouchMove: true
   });
+  console.log('projectGallerySlider_after', projectGallerySlider);
 }
 window.addEventListener('resize', function () {
   initSwipers();

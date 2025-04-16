@@ -38,6 +38,13 @@ if (have_posts()) :
         $live_preview_link = get_field_value($post_fields, 'live_preview_link');
         $view_code_link    = get_field_value($post_fields, 'view_code_link');
         $project_gallery   = get_field_value($post_fields, 'project_gallery');
+
+        $base_args = [
+            'project_content' => $project_content,
+            'tech_stack_info' => $tech_stack_info,
+            'live_preview_link' => $live_preview_link,
+            'view_code_link' => $view_code_link
+        ];
         ?>
         <section class="hero-ver-2">
             <div class="hero-ver-2__inner">
@@ -189,9 +196,9 @@ if (have_posts()) :
                             </div>
                         </div>
                         <?php
-                        $args = [
-                            'custom_class' => 'desktop'
-                        ];
+                        $args = array_merge($base_args, [
+                            'custom_class' => 'desktop',
+                        ]);
 
                         include(locate_template('src/template-parts/template-project-gallery-info.php', false, false, $args));
                         ?>
@@ -212,9 +219,9 @@ if (have_posts()) :
 
             <div class="project-gallery__mob-info container-inner">
                 <?php
-                $args = [
-                    'custom_class' => 'mobile'
-                ];
+                $args = array_merge($base_args, [
+                    'custom_class' => 'mobile',
+                ]);
 
                 include(locate_template('src/template-parts/template-project-gallery-info.php', false, false, $args));
                 ?>

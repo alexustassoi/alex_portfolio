@@ -329,6 +329,10 @@
                 transition: opacity var(--wp--transition);
                 text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.3);
 
+                @include max-break(1540px) {
+                    font-size: 18px;
+                }
+
                 &:after {
                     position: absolute;
                     content: '';
@@ -397,7 +401,7 @@
                 z-index: 2;
                 right: 0;
                 bottom: 0;
-                padding: 50px 80px 25px 100px;
+                padding: 50px 30px 25px 100px;
                 max-width: 75%;
 
                 @include max-break(991px) {
@@ -406,7 +410,7 @@
 
                 @include max-break(670px) {
                     padding-left: 90px;
-                    padding-right: 60px;
+                    padding-right: 30px;
                 }
 
                 @include max-break(570px) {
@@ -437,7 +441,7 @@
                     width: 100%;
                     height: 100%;
                     z-index: -1;
-                    background-color: rgba(0, 0, 0, .5);
+                    background-color: rgba(0, 0, 0, .6);
                     border-top-left-radius: 26px;
                     overflow: hidden;
                 }
@@ -546,6 +550,7 @@
             }
 
             &__project-content,
+            &__project-content-inner,
             &__project-title {
                 color: var(--wp--color--white);
                 font-family: var(--wp--font-family--roboto);
@@ -554,7 +559,7 @@
                 line-height: 1.5;
                 letter-spacing: 2px;
 
-                @include max-break(991px) {
+                @include max-break(1540px) {
                     font-size: 14px;
                 }
             }
@@ -582,23 +587,125 @@
                         left: -25px;
                     }
                 }
+            }
 
-                & > p {
-                    @include max-break(670px) {
-                        height: 105px;
+            &__project-content-inner {
+                max-height: 400px;
+                overflow-y: auto;
+                padding-right: 50px;
+
+                @include max-break(1750px) {
+                    max-height: 320px;
+                }
+
+                @include max-break(991px) {
+                    max-height: 290px;
+                }
+
+                @include max-break(850px) {
+                    max-height: 250px;
+                }
+
+                @include max-break(670px) {
+                    max-height: 215px;
+                }
+
+                @include max-break(570px) {
+                    max-height: unset;
+                    overflow: unset;
+                    padding-right: 0;
+                }
+
+                /* Styles for Webkit browsers (Chrome, Edge, Safari) */
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: rgba(225, 225, 225, .6);
+                    border-radius: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #ffffff;
+                    border-radius: 3px;
+                }
+
+                /* For Firefox */
+                * {
+                    scrollbar-width: thin;
+                    scrollbar-color: #ffffff #e0e0e0;
+                }
+
+                :last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &__project-content,
+            &__project-content-inner {
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    margin-bottom: 20px;
+                    color: inherit;
+                }
+
+                h2 {
+                    font-size: 34px;
+
+                    @include max-break(1199px) {
+                        font-size: 32px;
                     }
 
-                    @include max-break(570px) {
-                        height: unset;
-                        max-height: 210px;
+                    @include max-break(670px) {
+                        font-size: 28px;
+                    }
+                }
+
+                h3 {
+                    font-size: 24px;
+                }
+
+                h4 {
+                    font-size: 22px;
+                }
+
+                h5 {
+                    font-size: 18px;
+                }
+
+                h6 {
+                    font-size: 16px;
+                }
+
+                & > p {
+                    margin-bottom: 15px;
+                }
+
+                em {
+                    font-style: italic;
+                }
+
+                a {
+                    text-decoration: underline;
+
+                    &:hover {
+                        text-decoration: unset;
                     }
                 }
 
                 p {
-                    overflow-y: auto;
+                    strong {
+                        font-weight: 700;
+                    }
                 }
 
                 p,
+                ul,
+                ol,
                 .project-gallery__tech-stack-info,
                 .project-gallery__tech-stack-info * {
                     color: inherit;
@@ -608,6 +715,44 @@
                     letter-spacing: 1px;
                     text-align: left;
                     line-height: inherit;
+
+                    * {
+                        color: inherit;
+                        font-family: inherit;
+                        font-size: inherit;
+                        font-weight: inherit;
+                        letter-spacing: 1px;
+                        text-align: left;
+                        line-height: inherit;
+                    }
+                }
+
+                ul,
+                ol {
+                    padding-left: 30px;
+                    margin-bottom: 30px;
+
+                    @include max-break(1470px) {
+                        margin-bottom: 20px;
+                    }
+
+                    @include max-break(570px) {
+                        padding-left: 25px;
+                    }
+
+                    li {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                ul {
+                    li {
+                        list-style-type: disc;
+                    }
+                }
+
+                ol {
+                    list-style-type: decimal;
                 }
 
                 .project-gallery__tech-stack-info {
@@ -615,7 +760,7 @@
                         font-weight: 700;
                         font-size: 18px;
 
-                        @include max-break(850px) {
+                        @include max-break(1540px) {
                             font-size: 16px;
                         }
 
