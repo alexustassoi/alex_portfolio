@@ -129,6 +129,7 @@
 
     &__item-desc {
         width: calc(100% - 100px);
+        max-width: 1000px;
         padding-left: 48px;
         max-height: 0;
         overflow: hidden;
@@ -195,9 +196,9 @@
             content: '';
             display: block;
             left: 35px;
-            top: 0;
-            width: 40px;
-            height: 40px;
+            top: 6px;
+            width: 30px;
+            height: 30px;
             z-index: 1;
             background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNi42NjY2OSAyMEgzMy4zMzM0IiBzdHJva2U9IiMxNDEzMTMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTIwIDYuNjY2OTlWMzMuMzMzNyIgc3Ryb2tlPSIjMTQxMzEzIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==) center center no-repeat;
             background-size: contain;

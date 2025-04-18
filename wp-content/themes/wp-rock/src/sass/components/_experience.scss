@@ -119,6 +119,11 @@
     &__right-col {
         width: 100%;
         max-width: 545px;
+        padding-top: 35px;
+
+        @include max-break(850px) {
+            padding-top: 40px;
+        }
 
         @include max-break(768px) {
             max-width: 50%;
@@ -127,6 +132,7 @@
         @include max-break(670px) {
             max-width: unset;
             margin-bottom: 50px;
+            padding-top: 0;
         }
 
         @include max-break(480px) {

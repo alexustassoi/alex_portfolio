@@ -352,19 +352,24 @@
     }
 
     &__experience-info {
-        column-count: 2;
-        break-inside: avoid-column;
-        column-gap: 30px;
+        display: flex;
+        gap: 30px;
+        //column-count: 2;
+        //break-inside: avoid-column;
+        //column-gap: 30px;
         margin-bottom: 64px;
 
         @include max-break(670px) {
-            column-gap: 75px;
+            gap: 75px;
+            //column-gap: 75px;
             margin-bottom: 55px;
         }
 
         @include max-break(570px) {
-            column-count: unset;
-            column-gap: unset;
+            gap: 0;
+            flex-direction: column;
+            //column-count: unset;
+            //column-gap: unset;
             margin-bottom: 30px;
         }
     }

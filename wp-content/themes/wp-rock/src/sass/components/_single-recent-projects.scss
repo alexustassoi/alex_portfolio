@@ -464,7 +464,7 @@
             &__links {
                 display: flex;
                 justify-content: space-between;
-                margin-top: 35px;
+                margin-top: 25px;
 
                 @include max-break(480px) {
                     margin-top: 30px;

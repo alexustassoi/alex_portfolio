@@ -71,7 +71,7 @@ $social_repeater = get_field_value($global_options, 'social_repeater');
                 $image_id   = attachment_url_to_postid($icon);
                 list($image_src, $image_width, $image_height) = wp_get_attachment_image_src($image_id, 'default', true);
 
-                echo '<a class="custom-sidebar__social-item" href="' . do_shortcode($link) . '"><img class="custom-sidebar__social-icon" src="' . do_shortcode($icon) . '" alt="Social icon" /><img class="custom-sidebar__social-h-icon" src="' . do_shortcode($hover_icon) . '" alt="Social icon" /></a>';
+                echo '<a class="custom-sidebar__social-item" href="' . do_shortcode($link) . '"><img width="16" height="16" class="custom-sidebar__social-icon" src="' . do_shortcode($icon) . '" alt="Social icon" /><img width="16" height="16" class="custom-sidebar__social-h-icon" src="' . do_shortcode($hover_icon) . '" alt="Social icon" /></a>';
             } ?>
         </div>
     <?php }

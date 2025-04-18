@@ -123,6 +123,11 @@
         font-weight: 400;
         line-height: 1.44;
         margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         @include max-break(1540px) {
             font-size: 16px;
@@ -231,15 +236,14 @@
 
     &__tech-stack {
         color: var(--wp--color--grey-v2-text);
-        font-size: 16px;
+        font-size: 14px;
         font-style: normal;
         font-weight: 400;
         line-height: 1.612;
         margin-bottom: 30px;
-        margin-top: auto;
 
         @include max-break(1540px) {
-            font-size: 14px;
+            //font-size: 14px;
             margin-bottom: 25px;
         }
 
@@ -251,6 +255,7 @@
     &__item-bottom {
         display: flex;
         justify-content: space-between;
+        margin-top: auto;
     }
 
     &__view-code-link {
